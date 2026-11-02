@@ -1,0 +1,212 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Mirrored from planet.urv.es/planetdr/info/info3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:15:22 GMT -->
+<head><meta charset="utf-8"/>
+<title>PLANET Digital Repository</title>
+<style type="text/css">
+      @import url("../style/tigris.css");
+      @import url("../style/maven.css");
+  </style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="composite" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr valign="top">
+<td id="leftcol" width="126">
+<div> <strong>Information</strong> <br/><br/>
+<div> <small> <a href="../body.html#news">News</a> </small> </div>
+<div> <small> <a href="info1.html">Educational Contents</a> </small> </div>
+<div> <small> <a href="info2.html">DRI</a> </small> </div>
+<div> <small> <strong>ECL</strong> </small> </div>
+<div> <small> <a href="info4.html">EduSource</a> </small> </div>
+<div> <small> <a href="info5.html">Authors</a> </small> </div>
+<div> <small> <a href="info6.html">Collaborators</a></small></div>
+<div> <small> <a href="info7.html#download"> Download</a></small></div>
+<div> <small> <a href="info7.html#install">Installation</a> </small> </div>
+<div> <small> <a href="info9.html">Site Administration</a> </small> </div>
+<div> <small> <a href="info10.html">Registered Users</a> </small> </div>
+<div> <small> <a href="info11.html">Communities</a> </small> </div>
+<br/>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3><span style="background-repeat: repeat;"><font size="2"> ECL</font></span></h3>
+<p><font size="2"><b>EduSource Communication Language</b></font></p>
+<p align="left"><font size="2">A language is a human
+communication protocol, which allows two or more people to understand
+each other. EduSource Communication Language (ECL) protocol is the
+language for all eduSource members connected to a heterogeneous
+network. It consists of institution repositories, peer-topeer network,
+individual small repositories, and application interfaces. The
+institution repositories such </font><font size="2">Explora, Aloha,
+and Careo are stable eduSource members. Typically, the institution
+repositories have known URL and Web servers running at all times. These
+repositories already offer their services through their own protocol
+either via HTTP or XMLRPC requests. ECL protocol enables these
+repositories to communicate with each other and enables other
+repositories and services to become a part of eduSource. The protocol
+is independent from any existing protocols and enables developers to
+build universal tools and services that will enable their users to
+connect and use services provided by any repository connected to the
+eduSource network.</font></p>
+<p align="left"><font size="2">The ECL implements the IMS Digital
+Repository Interoperability specification. lt follows closely IMS DRI
+and models its messaging protocol according to IMS DRI general
+messaging model.</font></p>
+<p align="left"><font size="2">Since the complexity of the ECL
+protocol might be detrimental to its adoption, an eduSource connector
+which implements the ECL protocol is provided. The connector provides a
+standard API to connect existing repository to the eduSource network.
+ECL protocol requires institution repositories or tools to implement
+connector handlers only for those services they want to expose to
+others (Figure 2), which is a far simpler than implementing and
+deploying every service in </font><font size="2">each institution. The
+connector also facilitates version synchronization during the protocol
+evolution. Changes in the protocol itself rarely propagate to the API
+level. In most cases, </font><font size="2">repositories do not have
+to worry about the change in the protocol, they only need to update the
+connector with a never version. Changes in the ECL protocol are
+detected by the newer version of the connector and are dealt with
+automatically.</font></p>
+<ul>
+<p align="left"><font size="2">Four levels can be
+differentiated:</font></p>
+<li><font size="2">L1. Communication protocol (HTTP, SOAP,
+XML-RPC, Peer-to-peer, etc.)</font></li>
+<li><font size="2">L2. Communication language (ECL, OAI, POOL,
+etc)</font></li>
+<li><font size="2">L3. Metadata (IMS, CanCore, Dublin core)</font></li>
+<li><font size="2">L4. Ontologies (vocabularies for metadata)</font></li>
+</ul>
+<table border="1" bordercolor="#000000" height="182" width="97%">
+<tbody>
+<tr>
+<td height="18" width="27%"><font size="2"><b>ECL Service
+Description</b></font></td>
+<td height="18" width="73%"><br/>
+</td>
+</tr>
+<tr>
+<td height="18" width="27%"><font size="2"><i>Search</i></font></td>
+<td height="18" width="73%">
+<p align="left"><font size="1">Search is a SOAP service
+implemented at service provider (server) computers. As recommended by
+IMS DRI, ECL protocol uses XQuery. To enable connection of the
+repositories that do not support (full) XQuery a set of XQuery
+templates is used. The </font><font size="1">repositories register
+their Search Service with an indication of supported templates or full
+XQuery search capability.</font></p>
+</td>
+</tr>
+<tr>
+<td height="10" width="27%"><font size="2"><i>Expose</i></font></td>
+<td height="10" width="73%">
+<p align="left"><font size="1"> Expose is a SOAP service
+implemented on client computers. When asynchronous messaging is
+required, this service will be called by service providers to return
+the responses for search, gather, and alert.</font></p>
+</td>
+</tr>
+<tr>
+<td height="18" width="27%"><font size="2"><i>Submit</i></font></td>
+<td height="18" width="73%">
+<p align="left"><font size="1"> Submit is a SOAP service
+implemented at service provider (server) computers. It is a function
+for moving an object (metadata and learning object) to a repository.
+Clients can make request to this service to determine the type of
+transfer protocol. The transfer protocol can be a successive SOAP
+request to upload the object or FTP transfer protocol.</font></p>
+</td>
+</tr>
+<tr>
+<td height="18" width="27%"><font size="2"><i>Store</i></font></td>
+<td height="18" width="73%">
+<p align="left"><font size="1"> Store is a SOAP service
+implemented on client computers. When asynchronous messaging is
+required, this service is called by service providers to return the
+results of submit function.</font></p>
+<p align="left"><font size="1"> Request is a SOAP service
+implemented at service provider (server) computers. It provides a
+function to ask to deliver objects to a client. The transfer protocol
+could be a successive SOAP request to download the object or FTP
+transfer protocol.</font></p>
+</td>
+</tr>
+<tr>
+<td height="18" width="27%"><font size="2"><i>Request</i></font></td>
+<td height="18" width="73%">
+<p align="left"><font size="1">Request Request is a SOAP
+service implemented at service provider (server) computers. It provides
+afunction to ask to deliver objects to a client. The transfer protocol
+could be a successive SOAP request to download the object or FTP
+transfer protocol.</font></p>
+</td>
+</tr>
+<tr>
+<td height="18" width="27%"><font size="2"><i>Deliver</i></font></td>
+<td height="18" width="73%">
+<p align="left"><font size="1"> Deliver is a SOAP service
+implemented on client computers. When asynchronous messaging is
+required, this service will be called by service providers to return
+the chunked of results.</font></p>
+</td>
+</tr>
+<tr>
+<td height="9" width="27%"><font size="2"><i>Gather</i></font></td>
+<td height="9" width="73%">
+<p align="left"><font size="1"> Gather is a SOAP service
+implemented at service provider (server) computers. Repositories
+wanting to provide gather service must implement gather service handler.</font></p>
+</td>
+</tr>
+<tr>
+<td height="1" width="27%"><font size="2"><i>Gateway gather</i></font></td>
+<td height="1" width="73%">
+<p align="left"><font size="1">Gateway gather is a type of
+gather service. It allows EduSource members to make gathee requests to
+repositories external to eduSource. By default, the results are
+converted to IEEE LOM format or alternatively they remain in the format
+used in external repository Gateway </font><font size="1">gather
+service providers must specify a repository type and protocol (e.g.
+OAI).</font></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" height="36" width="100%"><br/>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><img border="0" height="366" src="../images/ecldiagram.jpg" width="524"/></p>
+<p> </p>
+</blockquote>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="footer"> <br/>
+<br/>
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<p style="text-align: center"><font id="app" size="1">PlanetDR: Planet Digital Repository.<br/>
+		A Research Project from
+		<a alt="Universitat Rovira i Virgili" href="http://www.urv.net/">URV</a>.</font>
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/planetdr/info/info3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:15:23 GMT -->
+</html>

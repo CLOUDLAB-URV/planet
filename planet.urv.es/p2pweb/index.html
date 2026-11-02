@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<!-- Mirrored from planet.urv.es/p2pweb/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:00:16 GMT -->
+<head><meta charset="utf-8"/>
+<title>The p2pWeb model: a glue for the Web</title>
+<style type="text/css">
+@import url("style/tigris.css");
+@import url("style/maven.css");
+  </style>
+</head>
+<body class="composite">
+<div id="banner">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="text-align: center; vertical-align: middle;" width="217"> <img align="left" border="0" src="images/logo.jpg"/> </td>
+<td style="text-align: center; vertical-align: bottom;">
+<p style="text-align: center;"><span style="text-decoration: none;"></span>      <span style="font-weight: 700; text-decoration: none;"><a href="index-2.html"><font size="4">The p2pWeb
+model: a glue for the Web </font></a></span> </p>
+</td>
+<td width="222">
+<div align="right" id="login">
+<p align="center"><a href="http://ants.etse.urv.es/planet"> <img border="0" height="149" src="images/logoplanet.jpg" width="148"/></a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tbody>
+<tr>
+<td width="286"><font size="2">Last
+Updated: 22 Nov 2006</font></td>
+<td>
+<div align="right"> <font size="2"><a href="../index.html"> <img alt="" class="handle" height="7" src="images/none.png" width="7"/>PLANET Project Page</a> | <a href="http://www.etse.urv.es/recerca/ast/"> <img alt="" class="handle" height="7" src="images/none.png" width="7"/>AST Research Group</a> </font> <font size="2">  </font> </div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr valign="top">
+<td id="leftcol" width="126">
+<div id="navcolumn">
+<div>
+<p style="margin-top: 0pt; margin-bottom: 0pt;"> <strong><font size="2">P2PWeb</font></strong></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><small>
+<a href="#Description"><font size="2"><img alt="" class="handle" src="images/none.png"/>Description</font></a><br/>
+<a href="#Downloads"><font size="2"><img alt="" class="handle" src="images/none.png"/>Downloads</font></a><br/>
+<a href="#Authors"><font size="2"><img alt="" class="handle" src="images/none.png"/>Authors</font></a><br/>
+<a href="http://projects-deim.urv.cat/trac/p2pweb"><font size="2"><img alt="" class="handle" src="images/none.png"/>Project</font></a><br/>
+</small></p>
+</div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3> <font size="2"><a name="Description">Description</a></font></h3>
+<br/>
+<!-- <br>
+<b> NEWS: </b> P2PWeb and MoodleShare are being tested in the planetlab network. You can test this initial prototype in <a href="http://planetlab1.ls.fi.upm.es:3000"> PLANETLAB TESTBED </a>
+<br><br><br> -->
+<div style="text-align: justify;">In the recent
+years, peer-to-peer has atracted a lot of attention as a promising
+technology for massive scalable applications. On the one hand, killer
+applications like file-sharing (Naspter, Kazaa, eDonkey), content
+distribution (BitTorrent) and VoIP (Skype) are already generating most
+of the Internet traffic (surpassing Web traffic). This is a proof of
+the viability and success of such technologies.<br/>
+<br/>
+
+
+On the other hand, in the research setting it has emerged a new kind of
+purely decentralized peer-to-peer networks called Structured
+peer-to-peer overlays or Distributed Hash Tables (DHT). These kind of
+networks offer interesting features like massive scalability, efficient
+Content-based routing and resource discovery, fault-tolerance and
+self-adjusting behaviours. Furthermore, DHTs are considered as a key
+building block for a plethora of distributed services like
+file-sharing, content distribution and retrieval, publish/subscribe
+systems, or naming systems among others. Nevertheless, DHTs have not
+gained the popularity of killer applications like Skype or Kazaa. They
+are still restricted to academic spheres and specific distributed niche
+applications. We however believe that in a short term, applications
+will benefit from DHTs services in a natural way and thus leaving the
+research arena definetly. Examples of this trend are Emule/Kad (Overnet
+DHT) or Azureus use of a DHT layer for the tracker entity.<br/>
+<br/>
+
+
+An important misconception that is hindering the adoption of DHT
+services is the classical use of peer-to-peer in edge desktop
+computers. Although it is interesting to benefit from desktop resources
+and bandwidth, other kind of peer-to-peer applications can be devised
+for the server setting. In fact, DHT services are ideally aimed for
+creating a distributed glue for a network of web servers offering
+integrated internet-wide services. Let us study severals reasons that
+favour DHTs for creating such a glue service:<br/>
+<br/>
+</div>
+<ol style="text-align: justify;">
+<li>Churn vs Stability: Web servers are stable peers that
+are not continously entering and leaving the network. This dynamicity
+is a strong problem for DHTs deployed in networks of volatile edge
+nodes. Because of this, the DHT abstraction can offer almost optimal
+efficiency without the burden of heavy self-adjusting stabilisation
+protocols.</li>
+<li>NAT traversal and firewalls vs Web accesibility: edge
+peers are usually located behind firewalls or NATs that preclude their
+full participation as routers in the network. Although there exist
+proxying techniques to overcome this problem, they represent a burden
+for the overall overlay. The use of HTTP for the communication between
+Web servers in the DHT overlay permits to avoid such firewall and NAT
+problems so all nodes are full-fledged routers.</li>
+<li>Persistent connections Vs decoupling: most egde
+peer-to-peer networks use TCP or UDP as their communication protocol
+and HTTP only for downloads. Every machine has a limit of open
+connections and they are consuming the bandwith of peers even in the
+lightest protocols. The use of HTTP for inter-webpeer communication
+creates a decoupled infrastructure that saves traffic and open
+connections and thus creates a very lightweight infrastucture. A
+webnode routing table is not a collection of open connections but
+instead a list of URLs. This costless approach will permit the creation
+of URL-caches to improve the overall performance of the infrastructure.</li>
+<li>Peers Vs Super-peers: the decentralized network of
+webservers (glue DHT) is in fact an overlay of super-peers that can
+offer added services to the huge mass of edge peers. By stabilishing
+these two levels, we can devise innovative distributed services derived
+from the interaction of both layers. It is a transition from a Web of
+isolated Web server islands to a true interconnected (glued) web of
+peer web servers. </li>
+</ol>
+<div style="text-align: justify;"><br/>
+
+
+We foresee a lot of applications that can benefit from such
+infrastructure. From efficient distributed RSS syndication using
+publish/subscribe services on top of the network, to instant messaging
+protocols or even distributed geo-information indexes like GoogleMaps
+and Google Local. Our proposed proof of concept application is framed
+in a known open source project called Moodle. Moodle is a virtual
+campus web application used in thousands of Universities and Learning
+Institutions around the world. We have developed an extension of Moodle
+that aims to interconnect all the Moodle sites in the Internet. For the
+moment, this extension will offer worldwide statistics of the usage of
+Moodle around the world, but it will also permit to locate resources in
+the whole Moodle network of servers. It will be thus possible for a
+teacher to locate course contents related to his subject in other
+Moodles located elsewhere.  </div>
+<h3><span style="background-repeat: repeat;"><font size="2"><a name="Downloads">Downloads</a></font></span></h3>
+<br/>
+<span style="font-weight: bold; color: red;">
+<a href="http://projects-deim.urv.cat/trac/p2pweb/wiki/Download">Downloads section</a>
+</span>
+<br/>
+<br/>
+
+MoodleShare screencasts:<br/>
+<ul>
+<li>Block deployment (<a href="videos/1_deploy.avi">video</a>)</li>
+<li>Configuring block (<a href="videos/2_0_configure.avi">video</a>)</li>
+<li>Moving to other country (<a href="videos/2_1_move_to_other_country.avi">video</a>)</li>
+<li>Browsing maps (<a href="videos/3_browsingmaps.avi">video</a>)</li>
+<li>Searching 1 (<a href="videos/4_searching1.avi">video</a>)</li>
+<li>Searching 2 (<a href="videos/5_searching2.avi">video</a>)</li>
+</ul>
+<br/>
+<h3><span style="background-repeat: repeat;"><font size="2"> <a name="Authors">Authors</a></font></span></h3>
+<blockquote><font size="2"><b><a href="http://www.etse.urv.es/~pgarcia">Pedro
+García López</a></b>, full-time
+professor in the Department of Computer Science and Mathematics at
+Universitat Rovira i Virgili in Tarragona, Catalonia, Spain. Contact <a href="mailto:pedro.garcia@urv.cat">&lt;pedro.garcia@urv.cat</a>&gt;<br/>
+</font><font size="2"><b><br/>
+
+
+Lluís Pàmies i Juárez</b>, </font><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">M.
+Sc. </span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"> Computer Science Student in the Department of
+Computer Science and Mathematics at Universitat Rovira i Virgili in
+Tarragona, Catalonia, Spain.</span><font size="2">
+Contact <a href="mailto:lluis.pamies@estudiants.urv.cat">&lt;lluis.pamies@estudiants.urv.cat</a>&gt;<br/>
+</font><font size="2"><b><br/>
+
+
+Marc Espelt Palau</b>, </font><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">M.
+Sc. </span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"> Computer Science Student in the Department of
+Computer Science and Mathematics at Universitat Rovira i Virgili in
+Tarragona, Catalonia, Spain.</span><font size="2">
+Contact</font><font size="2"> <a href="mailto:marc.espelt@estudiants.urv.cat">&lt;marc.espelt@estudiants.urv.cat</a>&gt;</font></blockquote>
+<font size="2"> </font></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="4" cellspacing="0" id="table2" style="width: 100%;">
+<tbody>
+<tr>
+<td width="2"></td>
+<td><font size="2">© 2006
+URV</font></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/p2pweb/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:00:45 GMT -->
+</html>

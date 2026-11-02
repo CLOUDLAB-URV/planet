@@ -1,0 +1,666 @@
+<html>
+<!-- Mirrored from planet.urv.es/bunshin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:10:12 GMT -->
+<head><meta charset="utf-8"/><title>Bunshin : DHT Replication &amp; Caching</title>
+<style type="text/css">
+
+          @import url("style/tigris.css");
+
+          @import url("style/maven.css");
+
+
+
+</style></head>
+<body class="composite">
+<div id="banner">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody><tr>
+<td style="text-align: center; vertical-align: middle;" width="217">
+<img align="left" border="0" height="143" src="images/logobunshin.jpg" width="163"/></td>
+<td style="text-align: center; vertical-align: middle;">
+<p style="text-align: center;"><span style="text-decoration: none;"><a href="index-2.html">
+<font size="5"></font></a></span><font size="5">     
+
+                  </font>
+<span style="font-weight: 700; text-decoration: none;">
+<a href="index-2.html"><font size="5">Bunshin : DHT Replication &amp; Caching </font></a></span>
+</p></td>
+<td width="222">
+<div align="right" id="login">
+<p align="center">
+<a href="http://www.p2pgrid.info/">
+<img border="0" height="129" src="http://www.p2pgrid.info/w/images/b/b2/P2pgrid9_big.png" width="273"/></a></p></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tbody><tr>
+<td width="286"><font size="2">Last Updated: 26 March 2009</font></td>
+<td>
+<div align="right">
+<font size="2"><a href="http://www.p2pgrid.info/">
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/>P2PGRID 
+
+		Project Page</a> | <a href="http://www.etse.urv.es/recerca/ast/">
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/></a><a href="http://ast-deim.urv.cat/wiki/Ast">AST
+		Research Group</a>
+
+		| <a href="http://www.etse.urv.es/recerca/ast/">
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/></a><a href="http://ast-deim.urv.cat/easypastry">EasyPastry</a></font> <font size="2"> 
+
+		</font>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td id="leftcol" width="126">
+<div id="navcolumn">
+<div>
+<font size="2">
+<br/><strong>Bunshin</strong><br/>
+<a href="#Description"><img alt="" class="handle" src="images/none.png"/>Description</a><br/>
+<a href="#Architecture"><img alt="" class="handle" src="images/none.png"/>Architecture</a><br/>
+<a href="#Validation"><img alt="" class="handle" src="images/none.png"/>Validation</a><br/>
+<a href="#Downloads"><img alt="" class="handle" src="images/none.png"/>Downloads</a><br/>
+<a href="#Authors"><img alt="" class="handle" src="images/none.png"/>Authors</a><br/>
+<a href="#Publications_"><img alt="" class="handle" src="images/none.png"/>Publications</a><br/>
+<a href="#Collaborations"><img alt="" class="handle" src="images/none.png"/>Collaborations</a><br/>
+<a href="#Related_Work"><img alt="" class="handle" src="images/none.png"/>Related Work</a><br/>
+<br/><strong>Documentation</strong><br/>
+<a href="api/index.html"><img alt="" class="handle" src="images/none.png"/>Javadoc (API)</a><br/>
+<br/><strong>Mods</strong><br/>
+<a href="#Azureus_Mod"><img alt="" class="handle" src="images/none.png"/>Azureus</a>
+</font>
+</div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3>
+<font size="2"><a name="Description">Description</a></font></h3>
+<p style="text-align: justify;">
+<span lang="EN-GB"><font size="2">The DHT abstraction provides the 
+
+			same functionality as a traditional hash table, by storing the 
+
+			mapping between a key and a value. This interface implements a 
+
+			simple store an retrieve functionality, where the value is always 
+
+			stored at the live overlay nodes/s to which the key is mapped by the  
+
+			KBR layer. Values can be objects of any type. 
+
+		</font></span>
+</p>
+<p style="text-align: justify;">
+<span lang="EN-GB"><font size="2">A 
+
+		distributed hash table (DHT) provides two operations : put(key,value) 
+
+		and value = get(key). The Bunshin implementation of put routes a 
+
+		PutMessage containing value to key's root. It upon receiving the 
+
+		message, stores the (key,value) pair in its local storage. The get 
+
+		operation routes a GetMessage, the key's root returns the value and its 
+
+		using the client node handle in a single hop.</font></span></p>
+<p style="text-align: center;">
+<img border="0" height="234" src="images/dht.jpg" width="310"/></p>
+<p style="text-align: justify;"><span lang="en-gb"><font size="2">Use 
+
+		replication to ensure that stored data survives node failure. To 
+
+		replicate a newly received key few times, the applications call 
+
+		replicaSet(k,r) and sends a copy of the key to each returned node.
+
+		</font></span></p>
+<p style="text-align: justify;"><span lang="en-gb"><font size="2">
+
+		Caching, applications like DHTs use dynamic caching to create transient 
+
+		copies of frequently requested data in order to balance query load.
+
+		</font></span></p>
+<p style="text-align: justify;">
+
+			 </p>
+<h3>
+<font size="2"> <a name="Architecture">Architecture</a></font></h3>
+<p style="text-align: justify;"><font size="2">Bunshin is built on top of 
+
+		a decentralized key-based routing (KBR) P2P overlay network. It benefits 
+
+		from the underlying services provided by the Common API layer like Past 
+
+		and CFS. A diagram can be seen just below.</font> </p>
+<p style="text-align: center;">
+<img border="0" height="290" src="images/tiers.jpg" width="822"/></p>
+
+		 <p style="text-align: justify;">
+<font size="2">We had previously used other solutions like Past, but 
+
+		they did not provide us with enough guarantees with the problem of key 
+
+		movement, when nodes join or leave the network. Sometimes, keys were not 
+
+		found or simply returned a null value. In Bunshin, we have solved this 
+
+		problem by using an active replication scheme. </font></p>
+<p style="text-align: justify;"><font size="2">Bunshin provides the 
+
+		standard put() and get() methods of a DHT, replicating data into 
+
+		REPLICA_FACTOR replicas. Possible node replicas are obtained via the 
+
+		Common API method replicaSet(). It is also notified of node joins / 
+
+		leaves by the update() method. However, to avoid event losses and 
+
+		consequently, update() misses, each node periodically checks the 
+
+		following:</font></p>
+<blockquote>
+<blockquote>
+<p style="text-align: justify;"><font size="2"><br/>
+
+				- Checks if all keys currently stored by my node already belong 
+
+				to me. If not, affected key/value pairs are inserted into the 
+
+				newly corresponding node.</font></p>
+<p style="text-align: justify;"><font size="2">- Checks if all 
+
+				replicas of my node’s key/value pairs are still alive, and their 
+
+				number is equal to REPLICA_FACTOR. If that is not the case, 
+
+				choose a new set of replicas and update accordingly.</font></p>
+<p style="text-align: justify;"><font size="2">- Check if all 
+
+				replicas assigned to my node have their owner still alive. If it 
+
+				is not, we may find that the new owner knows nothing about our 
+
+				key. Here we can choose between different policies, but the main 
+
+				idea is that nodes would notify the new owner and could follow a 
+
+				versioning control and choose the newest one.</font></p>
+</blockquote>
+</blockquote>
+<p style="text-align: justify;"> </p>
+<h3><span style="background-repeat: repeat;"><font size="2">
+<a name="Validation">Validation</a></font></span></h3>
+<p style="text-align: justify;">
+<span lang="EN-US" style="font-size: 10pt;">We have validated the 
+
+		viability of Bunshin’s approach by simulating creation of 1000 nodes and 
+
+		insertion of 1000 random key/value pairs using our own KBR simulator, 
+
+		called <a href="http://ants.etse.urv.es/planetsim">PlanetSim</a> and 
+
+		using the Chord overlay. The objective of this test is to check 
+
+		persistence and reliable properties of our replication system. Each 
+
+		key/value has six replicas (including the main copy stored at the direct 
+
+		successor). After the insertions, a fraction of the nodes fails without 
+
+		warning and we fetch each of the keys from a random existing node. We 
+
+		can see in Fig [] that the results are similar to those of CFS, which 
+
+		validates our approach.</span></p>
+<p align="center">
+<img border="0" height="369" src="images/test.gif" width="406"/></p>
+<p class="MsoNormal"><font size="2">Figure : Fraction of key request 
+
+		failures as a function of the fraction of 1000 nodes that fail. Each
+
+		</font><span lang="EN-GB"><font size="2">data point is the average of 5 
+
+		experiments involving 1000 keys lookups; the error bars indicate the 
+
+		minimum and maximum results.</font></span></p>
+<p> <br/></p>
+<h3><span style="background-repeat: repeat;"><font size="2">
+<a name="Downloads">Downloads</a></font></span></h3>
+<table border="0" cellpadding="8" cellspacing="0" id="table1" width="100%">
+<tbody><tr valign="top">
+<td rowspan="2">
+<div id="bodycol0">
+<div class="app">
+<div class="h3">
+<blockquote>
+<p><font size="2"><i>Attention</i> : future new 
+								versions of Bunshin will be included inside the
+								<b><a href="http://ast-deim.urv.cat/easypastry">
+								EasyPastry</a></b> Project. We strongly 
+								recommend to use the DHT abstraction layer that 
+								provides.</font></p>
+<p style="text-align: center">
+<a href="http://ast-deim.urv.cat/easypastry">
+<img border="0" height="110" src="images/easypastry.png" width="221"/></a></p>
+<p> </p>
+<p><font size="2"><i>Distribution</i>: Source 
+
+								and binary code, written in Java v1.6 and compiled 
+
+								in Java v1.6. <i>License</i>: <span lang="es">Bunshin</span> is available 
+
+								under a
+
+								<a href="http://www.gnu.org/copyleft/lesser.html">
+
+								LGPL</a>-like license.</font></p>
+<ul>
+<li><span lang="es"><font size="2"><b>March</b></font></span><b><font size="2"><span lang="es"> 
+
+									26</span>, 2009.
+
+									<span lang="es">Release 3.2</span></font></b><ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: New version based on FreePastry 
+										2.1 and XStream 1.3.1.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_3_2.zip">bunshin 3_2.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+<li><span lang="es"><font size="2"><b>June</b></font></span><b><font size="2"><span lang="es"> 
+
+									15</span>, 2008.
+
+									<span lang="es">Release 3.1</span></font></b><ul>
+<li><font size="2"><u><span lang="es">Release Notes</span></u>: New version based on FreePastry 
+										2.0_4. It also includes more bug fixes.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_3_1.zip">bunshin 3_1.zip</a> [source + binaries]</font>
+</li>
+</ul></li>
+</ul>
+<ul>
+<li><b><font size="2"><span lang="es"> 
+
+									May 14</span>, 2008.
+
+									<span lang="es">Release 3.0</span></font></b><ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: Optimized and 
+										Lightweight version. Improving the 
+										message dispacher, xml storage, and 
+										deleting unused functionalities like url 
+										or mutli-field methods. Furthermore, 
+										this version is tested on
+										<a href="http://www.grid5000.fr/">
+										Grid'5000 Platform</a>.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_3_0.zip">bunshin 3_0.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><b><font size="2"><span lang="es"> 
+
+									March 09</span>, 2007.
+
+									<span lang="es">Release 2.3 R.C.</span></font></b><ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: New version based on FreePastry 
+										2.0. </font> </li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_2_3.zip">bunshin_2_3.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+<li><b><font size="2"><span lang="es"> 
+
+									May 10</span>, 2006.
+
+									<span lang="es">Release 2.2.4</span></font></b><ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: New version based on FreePastry 1.4.4. New feature :  XMLStorage using
+										<a href="http://xstream.codehaus.org/">
+										XStream</a> project. It also includes more bug fixes.</font> </li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_2_2.zip">bunshin_2_2.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+<li><font size="2"><b>November</b></font><b><font size="2"><span lang="es"> 
+
+									15</span>, 2005.
+
+									<span lang="es">Release 2.1</span></font><span lang="es">.</span><font size="2"><span lang="es">2</span></font></b><ul>
+<li><font size="2"><u><span lang="es">Release Notes</span></u>: New features : 
+
+										New version based on FreePastry 1.4.2. 
+
+										This release includes major refactoring 
+
+										of Bunshin core code and</font>
+<font size="2">more bug fixes.</font>
+</li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_2_1.zip">bunshin_2_1.zip</a> [source + binaries]</font> </li>
+</ul></li>
+</ul>
+<ul>
+<li><b><font size="2"><span lang="es"> 
+
+									July 14</span>, 2005.
+
+									<span lang="es">Release 2.0.4</span></font>
+</b>
+<ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: New features : 
+
+										New version based on FreePastry 1.4.1. 
+
+										The new features are Multicontext 
+
+										application, URL methods and FileMapping. 
+
+										Bunshin core bugs 
+
+										fixed too.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_2_0.zip">bunshin_2_0.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><span lang="es"><font size="2"><b>February</b></font></span><b><font size="2"><span lang="es"> 
+
+									24</span>, 2005.
+
+									<span lang="es">Release 1</span>.3.</font>
+</b>
+<ul>
+<li><font size="2"><u><span lang="es">Release Notes</span></u>: New features : 
+
+										Links &amp; Listeners . Bunshin Search now 
+
+										includes the possibility of binding the 
+
+										values and query the specified incoming 
+
+										and outgoing links. Another feature is a 
+
+										callback which notifies the value 
+
+										updates, as for example, the incoming 
+
+										links.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_1_3.zip">bunshin_1_3.zip</a> [source + binaries]</font> </li>
+</ul></li>
+</ul>
+<ul>
+<li><b><font size="2"><span lang="es"> 
+
+									January 
+
+									11</span>, 2005.
+
+									<span lang="es">Release 1</span>.2.</font>
+</b>
+<ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: Caching is the 
+
+										new feature in this version. Other 
+
+										improvements in this version are new 
+
+										fields in the properties files and a bug 
+
+										fixed in the search engine.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_1_2.zip">bunshin_1_2.zip</a> [source + binaries]</font> </li>
+</ul>
+</li>
+<li><span lang="es"><font size="2"><b>November</b></font></span><b><font size="2"><span lang="es"> 
+
+									11</span>, 2004.
+
+									<span lang="es">Release 1</span>.1.</font>
+</b>
+<ul>
+<li><font size="2"><u><span lang="es">Release Notes</span></u>: New version 
+
+										with class refactoring , new object 
+
+										abstraction BunshinConnection and the 
+
+										new keyword search engine BunshinSearch.</font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_1_1.zip">bunshin_1_1.zip</a> [source + binaries]</font> </li>
+</ul></li>
+</ul>
+<ul>
+<li><b><font size="2">
+<span lang="es">October 25</span>, 2004.
+
+									<span lang="es">Release 1</span>.0.</font>
+</b>
+<ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: Initial 
+
+										version, based on FreePastry 1.3.2. This release 
+
+										includes new features like the 
+
+										implementation of the StorageManager (MemStorage 
+
+										or DiskStorage), new replica control, 
+
+										and major bug fixing. It also includes the Javadoc html 
+
+										documentation. </font></li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="bunshin_1_0.zip">bunshin_1_0.zip</a> [source + binaries]</font> </li>
+</ul>
+<p> </p></li>
+</ul>
+<p><font size="2"><b><a name="Azureus_Mod">Azureus Mod</a></b></font></p>
+<p><font size="2">Azureus implements the BitTorrent protocol using java language and comes bundled with many invaluable features for both beginners and advanced users. 
+								Official website :
+								<a href="http://azureus.sourceforge.net/">
+								http://azureus.sourceforge.net/</a></font></p>
+<p><font size="2"><i>Distribution</i>: Source 
+
+								and binary code, written in Java v1.4.2 and compiled 
+								in Java v1.5.</font></p>
+<ul>
+<li><font size="2"><b>November</b></font><b><font size="2"><span lang="es"> 
+
+									25</span>, 2005.
+
+									Beta<span lang="es"> 1</span></font><span lang="es">.<font size="2">0</font></span></b><ul>
+<li><font size="2"><u><span lang="es">
+
+										Release Notes</span></u>: First version based on 
+										Azureus 2.3.0.4. The initial idea is 
+										swap the DHT original implementacion by 
+										Bunshin. The DHTTracker and Distributed 
+										DataBase are manly the changed </font> </li>
+<li><font size="2"><b><u>Download</u></b>:
+
+										<a href="azureus_mod_b1.zip">
+										azureus_mod_b1.zip</a> [source + binaries 
+										+ libraries 
+
+										]</font> </li>
+</ul>
+</li>
+</ul>
+<p> </p>
+</blockquote>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+<p> </p>
+<h3><span style="background-repeat: repeat;"><font size="2">
+<a name="Authors">Authors</a></font></span></h3>
+<blockquote>
+<font size="2">
+<p><b>
+<a href="http://deim.urv.cat/~ruben.mondejar">Rubn Mondjar Andreu</a></b>, 
+			PhD student in the Department of Computer Science and Mathematics at Universitat Rovira i Virgili in Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:ruben.mondejar@urv.cat">ruben.mondejar@urv.cat</a>&gt;</p>
+<p><b><a href="http://deim.urv.cat/~cpairot">Carles Pairot Gavald</a></b>, PhD 
+			research collaborator in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:carles.pairot@urv.cat">carles.pairot@urv.cat</a>&gt;</p>
+<p></p>
+<p><b><a href="http://deim.urv.cat/~pgarcia">Pedro Garca Lpez</a></b>, full-time professor in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:pedro.garcia@urv.cat">pedro.garcia@urv.cat</a>&gt;
+
+			</p>
+<p><font face="Times New Roman">  </font></p></font>
+<font size="2"> </font></blockquote>
+<font size="2"> </font><h3><font size="2"><font size="2"><a name="Publications_">Publications</a></font></font></h3>
+<font size="2"> </font><p align="justify"><font size="2"><b><font face="Verdana" size="2">2005</font></b></font></p>
+<font size="2"> </font><ul>
+<font size="2"> <li>
+<p align="justify"><font face="Verdana" size="2">Rubn Mondjar, 
+
+				Pedro Garca y  Carles Pairot. <b>
+<a href="papers/Bunshin_CEDI2005.pdf">Bunshin: DHT para 
+
+				aplicaciones distribuidas</a></b>. XIII Jornadas de Concurrencia y 
+
+				Sistemas Distribuidos (JCSD). I Congreso Espaol de Informtica 
+
+				(CEDI 2005). Granada, Spain, September 2005.
+
+				<a href="#Collaborations">[translation]</a></font></p></li>
+<li>
+<p align="justify"><font face="Verdana" size="2">Carles Pairot, Pedro Garca, 
+
+				Rubn Mondjar, and Antonio F. Gmez Skarmeta. <b>Building Wide-Area 
+
+				Collaborative Applications on top of Structured Peer-to-Peer 
+
+				Overlays</b>. Accepted for publication on Proceedings of 14th 
+
+				IEEE International Workshops on Enabling Technologies: 
+
+				Infrastructures for Collaborative Enterprises (WETICE-2005). 
+
+				Linkoping, Sweden, June 2005.</font> </p></li>
+<li>
+<p align="justify"><font face="Verdana" size="2">Carles 
+
+                Pairot, Pedro Garca, Rubn Mondjar, and Antonio F. Gmez 
+
+                Skarmeta. <b><a href="http://dx.doi.org/10.1007/11428862_34">p2pCM: A Structured Peer-to-Peer Grid Component 
+
+                Model</a></b>. Accepted for publication on Proceedings of the 5th 
+
+                International Conference on Computational Science. 2nd 
+
+                International Workshop on Active and Programmable Grid 
+
+                Architectures and Components. Atlanta, USA, May 2005.</font></p>
+</li>
+</font></ul>
+<font size="2"> </font><p><font size="2"> </font></p><h3>
+<span style="background-repeat: repeat"><font size="2">
+<a name="Collaborations">Collaborations</a></font></span></h3>
+<blockquote>
+<p><font size="2">
+<b>Reinout van Schouwen</b>, www.iids.org.</font></p><ul>
+<font size="2"> <li>
+<p align="justify">Quick Translation of CEDI's paper : <b>
+<a href="papers/Bunshin_CEDI2005_Translation.pdf">Bunshin : DHT 
+
+				for distributed application</a></b></p></li>
+<li>
+<p align="justify">Tester and Bug Reporter</p></li>
+</font></ul></blockquote>
+<p> </p>
+<font size="2"> </font><h3><span style="background-repeat: repeat;">
+<font size="2"> <font size="2"><a name="Related_Work">Related Work</a></font></font></span></h3>
+<font size="2"> </font><blockquote>
+<font size="2"> </font><p><font size="2"><font size="2">Past</font></font></p>
+<font size="2"> </font><p>
+<font size="2"> <font color="#006699" size="2">
+<a href="http://freepastry.rice.edu/PAST/">
+
+			http://freepastry.rice.edu/PAST/</a></font></font></p>
+<font size="2"> </font><p><font size="2"><font size="2">CFS </font></font></p>
+<font size="2"> </font><p><font size="2"><font color="#006699" size="2">
+<a href="http://www.pdos.lcs.mit.edu/papers/cfs:sosp01/">http://www.pdos.lcs.mit.edu/papers/cfs:sosp01/</a></font></font></p>
+<font size="2"> </font><p><font size="2"> </font></p>
+<font size="2"> </font><p><font size="2"> </font></p>
+<font size="2"> </font><p><font size="2"> </font></p>
+<font size="2"> </font></blockquote>
+<font size="2"> </font><p><font size="2"><br/></font></p>
+<font size="2"> </font><p></p>
+<font size="2"> </font></div>
+<font size="2"> </font></div>
+<font size="2"> </font></div>
+<font size="2"> </font></td>
+</tr>
+</tbody></table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="4" cellspacing="0" id="table2" style="width: 100%;">
+<tbody><tr>
+<td width="2">
+<!-- INICIO codigo contadores.google.analytics -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-822924-1";
+urchinTracker();
+</script>
+<!-- FIN codigo contadores.google.analytics -->
+</td>
+<td>
+<font size="2"> 2004-2009 Rubn Mondjar &lt;<a href="mailto:ruben.mondejar@urv.cat">ruben.mondejar@urv.cat</a>&gt;</font></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/bunshin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:10:12 GMT -->
+</html>

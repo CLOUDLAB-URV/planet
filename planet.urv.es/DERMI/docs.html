@@ -1,0 +1,823 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<!-- Mirrored from planet.urv.es/DERMI/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:08:50 GMT -->
+<head><meta charset="utf-8"/>
+<title>
+Dermi: Decentralized Event Remote Method Invocation - Documentation
+          </title>
+<style type="text/css">
+          @import url("style/tigris.css");
+          @import url("style/maven.css");
+</style>
+<link href="style/print.html" media="print" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="composite">
+<div id="banner">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tr>
+<td>
+<img border="0" height="112" src="images/dermilogo.jpg" width="117"/><a href="index-2.html"><span style="text-decoration: none"></span></a>
+<span style="text-decoration: none">    
+                  <a href="index-3.html">
+<span style="font-weight: 700">D</span><span style="text-decoration: none; font-weight: 700">ecentralized
+                  </span><span style="font-weight: 700">E</span><span style="text-decoration: none; font-weight: 700">vent
+                  </span><span style="font-weight: 700">R</span><span style="text-decoration: none; font-weight: 700">emote
+                  </span><span style="font-weight: 700">M</span><span style="text-decoration: none; font-weight: 700">ethod
+                  </span><span style="font-weight: 700">I</span><span style="text-decoration: none; font-weight: 700">nvocation</span></a></span></td>
+<td>
+<div align="right" id="login">
+                     <p>
+<img border="0" height="74" src="images/cscw.jpg" width="112"/></p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tr>
+<td width="286"><font size="2">Last Updated: 07 February 2005</font></td>
+<td>
+<div align="right">
+<font size="2">
+<a href="http://www.etse.urv.es/recerca/ast/"><img alt="" class="handle" src="images/none.png"/>PLANET Project Page</a>
+      |
+      <a href="http://www.etse.urv.es/recerca/ast/"><img alt="" class="handle" src="images/none.png"/></a><a href="http://www.etse.urv.es/recerca/ast/">AST 
+		Research Group</a>
+      |
+	<img alt="" class="handle" src="images/none.png"/><a href="http://ants.etse.urv.es/ERMI">ERMI</a>
+      |
+      <a href="http://ants.etse.urv.es/CBUS"><img alt="" class="handle" src="images/none.png"/>CBUS</a>
+</font>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tr valign="top">
+<td>
+<div id="bodycol">
+<div class="app">
+<h3><font size="2">Installation and Setup</font></h3>
+<p><font size="2">Dermi distribution comes in the form of source 
+				code and a precompiled binary JAR package. The downloadable 
+				version consists of a <a href="http://www.winzip.com/">ZIP</a> 
+				file which should be extracted to any directory. Dermi comes 
+				with a set of JUnit tests and samples which can be executed to 
+				test Dermi's functionalities.</font></p>
+<p><font size="2">To execute these tests and samples, you need at 
+				least <b>Java2 JRE v1.5.0</b>. You will experience 
+    problems if you use prior versions because the annotation functionalities 
+    were not available until JDK 1.5.</font></p>
+<p> </p>
+<h3><span style="background-repeat: repeat"><font size="2">Compiling Dermi</font></span></h3>
+<p><font size="2">If you want to compile the sources, make sure you have 
+		installed <a href="http://ant.apache.org/">Jakarta ANT</a>. You must 
+		change to the ./bin directory in your Dermi installation directory and 
+		execute the following command:</font></p>
+<blockquote>
+<p><font size="2"><b>ant</b></font></p>
+</blockquote>
+<p><font size="2">We have used <b>
+<a href="http://freepastry.rice.edu/FreePastry/README-1.3.2.html">FreePastry 
+	1.3.2</a></b> version as the underlying P2P DHT substrate for Dermi. 
+	Nevertheless, we have modified a little set of FreePastry's files to comply 
+	with Dermi's specifications. These modifications can be found in <b>./src/rice</b> 
+	directory. All modifications start with a line like <font face="Courier New">
+<b>// DERMI ADDITIONS START HERE</b></font> and end with a line like
+	<font face="Courier New"><b>// DERMI ADDITIONS END HERE</b></font>.</font></p>
+<p><font size="2"><u><b>IMPORTANT NOTE</b></u>: As for the current version 
+	of Dermi (v1.2), automatic stub and skeleton generation is deprecated. The 
+    dynamic proxy technique is used. Therefore, remote procedure calls are 
+    dynamically intercepted in runtime by these objects. Subsequently, the older
+    <i>dermic</i> tool is unavailable from this version (1.1) onwards.</font></p>
+<p><font size="2">The next step is to edit the <b>dermi-config.xml</b> 
+		file located at the ./bin directory, and change the parameters 
+		concerning bootstrap host, port, protocol to use, etc.</font></p>
+<p><font size="2">In order to test Dermi's distribution using JUnit, you 
+		may choose two ways. If you want to run the tests on the console, simply 
+		type in the following while being within the ./bin directory:</font></p>
+<blockquote>
+<p><font size="2"><b>test</b></font></p>
+</blockquote>
+<p><font size="2">If you prefer running the tests and generate a nice HTML 
+		document containing the output logs<span lang="es"> (located at ./bin/reports 
+		directory)</span>, simply type:</font></p>
+<blockquote>
+<p><font size="2"><b>ant test</b></font></p>
+</blockquote>
+<p> </p>
+<h3><span style="background-repeat: repeat"><font size="2">Running the sample applications</font></span></h3>
+<p><font size="2">There is a binary precompiled <b>dermi.jar</b> file 
+		contained in the ./dist directory which you should include in the 
+		applications willing to use Dermi.</font></p>
+<p><font size="2">Dermi contains several sample applications which 
+		demonstrate and test all of the functionalities in the middleware.</font></p>
+<p><span lang="es"><font size="2">The instructions for running the 
+		different included samples are as follows:</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>Simple Object </b><i>(dermi.samples.simple)</i></font></span><p>
+<span lang="es"><font size="2">This sample includes the simple 
+			object. It demonstrates remote setter and getter methods.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.simple.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.simple.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><font size="2"><b>Asynchronous Multicall</b></font><span lang="es"><font size="2"><b> </b><i>(dermi.samples.asyncmulticall)</i></font></span><p>
+<font size="2">This is the same example as before, but defining the <i>
+      setAge() </i>method as asynchronous, that is the client does not block 
+      when executing this setter method</font><i><span lang="es"><font size="2">.</font></span></i></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.asyncmulticall.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.asyncmulticall.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Naming Object</b> <i>(dermi.samples.naming)</i></font></span><p>
+<span lang="es"><font size="2">It shows how the decentralized 
+			location service works.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server. 
+			It binds a Simple object to the naming service.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.naming.SimpleNamingServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the list 
+			client. It should show a list of already bound objects.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.naming.SimpleNamingList</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client. 
+			It looks up the Simple object and calls several setter/getter 
+			methods.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.naming.SimpleNamingClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Listener Objects</b> <i>(dermi.samples.listener)</i></font></span><p>
+<span lang="es"><font size="2">It demonstrates how to add listener 
+			objects and see how they react to different invocations.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.listener.SpriteServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run one listener 
+			client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.listener.SpriteClient2</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run another 
+			listener client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.listener.SpriteClient2</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client 
+			which sends a <i>setX()</i> call to the server. See how listener 
+			clients react to this call.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.listener.SpriteClient1</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Basic types Object</b> <i>(dermi.samples.basictypes)</i></font></span><p>
+<span lang="es"><font size="2">Primitive Java types can be used as 
+			well, for method's return results and parameters. Our stubs and 
+			skeletons will automatically do the boxing.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.basictypes.SpriteServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.basictypes.SpriteClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Dynamic class loading</b> <i>(dermi.samples.dynamic)</i></font></span><p>
+<span lang="es"><font size="2">If the stub class cannot be found on 
+			the client machine, it is automatically sent by the server skeleton. 
+			In this case, the class <i>dermi.samples.dynamic.SimpleStub</i> has 
+			been removed from the classpath, and included in the class 
+			repository directory (which can be modified in <b>dermi-config.xml</b> 
+			file).</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>runDynamic 
+				dermi.samples.dynamic.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client. 
+			You should notice a message telling that the class will be remotely 
+			loaded.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.dynamic.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Mobile objects</b><i> (dermi.samples.mobile)</i></font></span><p>
+<span lang="es"><font size="2">Dermi supports mobile objects. In 
+			this example, we instantiate a Teleport server, which initializes a 
+			Simple object. If we start a SimpleClient, it will invoke Simple's 
+			methods. Subsequently we start a Teleport client, which will send 
+			the Simple Object to the Teleport object. If we start a Simple 
+			client, it will now transparently invoke Teleport's methods. See the 
+			code in <i>TeleportClient.java</i> for more details.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the Teleport 
+			server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.mobile.TeleportServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the Teleport 
+			client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.mobile.TeleportClient</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the Simple 
+			client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.simple.SimpleClient</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Now press &lt;RETURN&gt; in the 
+			TeleportClient shell. The Simple server object is moved to the 
+			Teleport server object.</font></span></p>
+<p><span lang="es"><font size="2">Now just run the Simple client, 
+			and see how it works OK, as if the Simple server hadn't gone.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.simple.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Exceptions</b> <i>(dermi.samples.exception)</i></font></span><p>
+<span lang="es"><font size="2">If a method is invoked and throws an 
+			exception, this exception is propagated back to the client object, 
+			so as to notify it about the erroneous condition. In this example, 
+			when calling the <i>merge()</i> method, a <i>MergeException</i> is 
+			thrown and thus sent back to the client.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.exception.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.exception.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Pass by reference </b><i>(dermi.samples.reference)</i></font></span><p>
+<span lang="es"><font size="2">Other Dermi objects can be passed as 
+			arguments to other Dermi object methods. In this example, we create 
+			two objects: Place and User, and use a User as argument to several 
+			Place's methods.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the Place 
+			server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.reference.PlaceServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the User 
+			server, which creates several users and makes them join the place.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.reference.UsersServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the User 
+			client, which lists the actual users in the place.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.reference.UserClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Anycall abstraction</b> <i>(dermi.samples.anycall)</i></font></span><p>
+<span lang="es"><font size="2">Dermi provides a powerful new 
+			abstraction, namely <i>anycall</i>, which allows calls to be done to 
+			the closest servers in terms of network proximity. In this sample, 
+			we simulate a data unit retrieval process, similar to the one found 
+			in programs like <a href="http://setiathome.ssl.berkeley.edu/">SETI@Home</a> or 
+      <a href="http://www.ud.com/">United Devices Cancer 
+			Research Project</a>.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the Seti 
+			server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.anycall.SetiServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a client and run the Seti 
+			client. You can press &lt;RETURN&gt; and a new data unit will be requested 
+			to the server. The server can spare up to 5 data units. Once they 
+			are finished, it will seek for other servers, and if none of them 
+			has more available data units, the client will be notified by a <i>NotSatisfiedException</i>. Naturally, you can open more shells 
+			starting more Seti servers. You will notice that the client will be 
+			able to request more data units, until reaching the maximum provided 
+			by the servers.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.anycall.SetiClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Manycall abstraction </b><i>(dermi.samples.manycall)</i></font></span><p>
+<span lang="es"><font size="2">In addition to the <i>anycall</i> 
+			abstraction, the <i>manycall</i> is similar to the <i>anycall</i>, 
+			but referring not to only one server, but to many servers. In this 
+			example, we illustrate how to use it for a ballot involving many 
+			servers. A client wishes to know whether it can perform some task or 
+			not. It will ask a group of servers and collect their opinion. Once 
+			all votes have been accounted for, the result is returned to the 
+			client, which can check whether the required number of votes has 
+			been gathered.</font></span></p>
+<p><span lang="es"><font size="2">Open a minimum of two shells (you 
+			can open more, or less, if you wish) and start the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.manycall.VotingServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open the client, which will poll 
+			the existing servers until it gets the required number of votes. If 
+			it cannot gather all of the required votes, a <i>NotSatisfiedException</i> will be thrown.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.manycall.VotingClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Direct calls </b><i>(dermi.samples.direct)</i></font></span><p>
+<span lang="es"><font size="2">One-to-one calls are made as direct 
+			peer-to-peer calls, without involving the event service. This sample 
+			demonstrates this functionality.</font></span></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.direct.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.direct.SimpleClient</b></font></span></li>
+</ul>
+<p> </p></li>
+<li><span lang="es"><font size="2"><b>Distributed interception </b><i>(dermi.samples.interception)</i></font></span><p>
+<font size="2">Distributed interception is a facility which allows the 
+		interception of remote procedure calls by objects inserted between end 
+		objects. This way, we can intertwine and invoke interceptor objects 
+		before invoking a method in the destination object.</font></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.simple.SimpleServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open as many shells as you want, and 
+		run interceptors. These interceptors are simply logging interceptors, 
+		but they change the contents of the messages too. For example, for each
+		<i>setAge()</i> method called, they add +2 years to the specified age.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.</b></font></span><font size="2"><b>interception.LogInterceptorServer</b></font></li>
+</ul>
+<p><font size="2">Open a shell and run the client.</font><ul>
+<li><font size="2"><b>run dermi.samples.simple.SimpleClient</b></font></li>
+</ul>
+<p><font size="2">Note how the age has been increased +2 years for each 
+		open interceptor that you have. If you want to remove an interceptor, 
+		simply enter '<b>quit</b>' on its console and press &lt;RETURN&gt;.</font><p> </p></p></p></li>
+</ul>
+<div class="app">
+<ul>
+<li><font size="2"><b>Stateful object replicas </b></font><span lang="es">
+<font size="2"><i>(dermi.samples.replicastate)</i></font></span><p>
+<font size="2">Dermi allows the creation and management of stateful object 
+      replicas. You can start a group of replicated objects which maintain the 
+      same replicated state information. In this sample, we instantiate a server 
+      with its state replicated among all object replicas. Once a new replica is 
+      started, it queries the group of objects (via <i>anycall</i>) requesting 
+      the shared state.</font></p>
+<p><span lang="es"><font size="2">Open a shell and run the server.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.replicastate.SpriteServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run the client. 
+      (Server's state will be changed)</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.replicastate.SpriteClient</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run a new server 
+      replica.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.replicastate.SpriteServer</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">Open a shell and run a new client. (Note 
+      how both servers return the same state information)</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+				dermi.samples.replicastate.SpriteClient</b></font></span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p> </p>
+</blockquote>
+<div class="app">
+<h3><span style="background-repeat: repeat"><font size="2"><a name="devel">Developer's guide</a></font></span></h3>
+<p><font size="2"><u><b>IMPORTANT NOTE</b></u>: As for the current version 
+	of Dermi (v1.1), static stub and skeleton generation is deprecated. In this 
+    version you do not need to worry about these classes. Remote procedure calls 
+    are intercepted in runtime using dynamic proxies.</font></p>
+<p><font size="2">If you wish to code your objects taking advantage of 
+		Dermi services, you should follow these simple steps:</font></p>
+<ul>
+<li><font size="2">Code the interface to your object's methods. This 
+			interface should extend the <b>ERemote</b> interface and 
+			follow the next template:</font></li>
+</ul>
+<blockquote>
+<blockquote><b><font face="Courier New" size="2">import dermi.*;</font></b><font size="2"><br/>
+</font><b><font face="Courier New" size="2">import dermi.exception.*;</font></b><font size="2"><br/>
+</font><b><font face="Courier New" size="2">import dermi.annotation.*;</font></b><p>
+<font size="2">
+<br/><span style="background-color: #00FFFF"><b><font face="Courier New">
+        @DermiRemoteInterface</font></b><br/></span></font>
+<font face="Courier New" size="2"><b>public interface</b> 
+        AnObject <b>extends <span style="background-color: #00FFFF">ERemote</span></b> {</font><font size="2"><br/></font>
+</p>
+<blockquote><font face="Courier New" size="2">
+<span style="background-color: #00FFFF">@RemoteMethod (granularity = 
+          Granularity.MULTICALL, type = SynchronyType.SYNCHRONOUS)<br/>
+</span>public void aMethod 
+          (String param1, Integer param2, ...) <b>throws RemoteException</b>;</font><font size="2"><br/>
+</font><font face="Courier New" size="2">...</font><font size="2"><br/>
+</font>
+</blockquote><font face="Courier New" size="2">}<br/></font>
+</blockquote>
+<p><font size="2">Several aspects to comment here:</font></p>
+<ul>
+<li><font size="2">Every interface to any Dermi remote object <b>MUST
+        </b>be declared using the <b>@DermiRemoteInterface</b> annotation.</font></li>
+<li><font size="2">Every interface to any Dermi remote object <b>MUST</b> 
+        extend the <b>ERemote </b>interface.</font></li>
+<li><font size="2">For each Dermi remote method, an annotation including 
+        the invocation type and the synchrony type must be provided. Current 
+        values for these parameters include the following:</font></li>
+</ul>
+<table border="1" id="table1" style="border-collapse: collapse" width="100%">
+<tr>
+<td bgcolor="#C0C0C0" bordercolordark="#000000" bordercolorlight="#000000" style="border-style: solid; border-width: 1px" width="538">
+<ul>
+<li><font size="2"><b>Granularity</b></font><ul>
+<li><font size="2">DIRECTCALL</font></li>
+<li><font size="2">MULTICALL</font></li>
+<li><font size="2">ANYCALL</font></li>
+<li><font size="2">MANYCALL</font></li>
+<li><font size="2">LISTENER</font></li>
+<li><font size="2">ANYCALL_CONDITION</font></li>
+<li><font size="2">MANYCALL_LOCAL_CONDITION</font></li>
+<li><font size="2">MANYCALL_GLOBAL_CONDITION</font></li>
+</ul>
+</li>
+</ul>
+</td>
+<td bgcolor="#C0C0C0" bordercolordark="#000000" bordercolorlight="#000000" style="border-style: solid; border-width: 1px" width="606">
+<ul>
+<li><font size="2"><b>SynchronyType</b></font><ul>
+<li><font size="2">SYNCHRONOUS</font></li>
+<li><font size="2">ASYNCHRONOUS</font></li>
+</ul>
+</li>
+</ul>
+<p> </p></td>
+<td style="border-left-style: solid; border-left-width: 1px"> </td>
+<td> </td>
+</tr>
+</table>
+<p><font size="2">For<span lang="es"> more information, just take a 
+			look at<i> ./src/dermi/samples/simple/Simple.java</i></span></font><span lang="es">
+<font size="2">file.</font></span></p>
+</blockquote>
+<ul>
+<li><span lang="es"><font size="2">Code implementation class for the 
+			object, i.e. the code to be executed locally in the object, for each 
+			of its previously defined interface methods. The implementation, 
+			should obviously extend the object's interface. In addition, an 
+      empty constructor is required to be provided. You can find an 
+			example at <i>./src/dermi/samples/simple/SimpleImpl.java</i>. 
+      Nevertheless, a template like the following must be used:</font></span></li>
+</ul>
+<blockquote>
+<blockquote>
+<b><font face="Courier New" size="2">import dermi.*;</font></b><font size="2"><br/>
+</font><b><font face="Courier New" size="2">import dermi.exception.*;</font></b><font size="2"><br/>
+<br/></font><font face="Courier New" size="2"><b>public interface</b> 
+        AnObjectImpl <b>extends <span style="background-color: #00FFFF">
+          DermiRemoteObject</span></b> implements <b>AnObject </b>{</font><blockquote>
+<p><font face="Courier New" size="2">
+<span style="background-color: #00FFFF">public AnObjectImpl() {</span></font><font size="2"><span style="background-color: #00FFFF"><br/>
+</span></font><font face="Courier New" size="2">   ...</font></p>
+<p><font face="Courier New" size="2">}</font></p>
+<p><font face="Courier New" size="2">public AnObjectImpl (Properties 
+            env, ...) throws RemoteException {</font><p>
+<font face="Courier New" size="2">  
+			<span style="background-color: #00FFFF">super (env);</span></font><p>
+<font face="Courier New" size="2">   ...</font><p>
+<font size="1">}</font></p>
+</p></p></p></blockquote>
+<font face="Courier New" size="2">}<br/></font>
+</blockquote>
+</blockquote>
+<ul>
+<li><span lang="es"><font size="2">Optionally you should code a 
+			class for initializing the object (namely the <i>server </i>object), 
+			and another one for invoking its methods (namely the <i>client</i> 
+			object). You can follow the classes <i>./src/dermi/samples/simple/SimpleServer.java
+			</i>and<i> ./src/dermi/samples/simple/SimpleClient.java</i> on how 
+		to bind/lookup objects using the <b>File Registry</b>.</font></span></li>
+</ul>
+<blockquote>
+<p><font size="2">If you wish to register your objects into Dermi's 
+		Decentralized Naming Service, you should follow the next template:</font></p>
+<blockquote>
+<p><font face="Courier New" size="2">package dermi.samples.listener;<br/>
+<br/>
+<b>import dermi.*;<br/>
+			import dermi.registry.*;<br/>
+</b><br/>
+			public class SpriteServer {<br/>
+    public static void main (String[] args) throws Exception {<br/>
+<b>      
+			<span style="background-color: #00FFFF">Properties env = 
+			Registry.getEnvironment ("dermi-config.xml");</span><br/>
+</b><br/>
+       <b>SpriteImpl server = new SpriteImpl ("hey 
+			boy, hey girl!", env);<br/>
+</b><br/>
+       <span style="background-color: #00FFFF"><b>
+			Registry.bind ("p2p://sprite", server);<br/>
+</b></span><br/>
+       System.in.read();<br/>
+       <b>server.close();<br/>
+</b>    }<br/>
+			}</font></p>
+</blockquote>
+<p><font size="2">Important things to note are the utilization of <b>
+		Registry.getEnvironment()</b> to load Dermi's configuration properties, 
+		which must be passed to the object implementation instance. Furthermore, 
+		you need to bind the object to the decentralized registry, which is done 
+		by using <b>Registry.bind()</b>. Note that the object's URI is required 
+		to start with "<b>p2p://</b>".</font></p>
+<p> </p>
+<p><font size="2">The client's template is the following:</font></p>
+<blockquote>
+<p><font face="Courier New" size="2">package dermi.samples.listener;<br/>
+<br/>
+<b>import dermi.*;<br/>
+			import dermi.registry.*;<br/>
+</b><br/>
+			public class SpriteClient {<br/>
+    public static void main (String[] args) throws Exception {<br/>
+       // Load the registry first<br/>
+<b>      
+			<span style="background-color: #00FFFF">Registry.loadRegistry ("registry-config.xml");</span><br/>
+</b><br/>
+       // Look up object in the registry<br/>
+<b>      
+			<span style="background-color: #00FFFF">Sprite client = (Sprite) 
+			Registry.lookup ("p2p://sprite");</span><br/>
+       client.addSpriteListener (SpriteEvent.class, 
+			new MyListener());<br/>
+</b>    }<br/>
+			}</font></p>
+</blockquote>
+<p><font size="2">The client's code is rather simple as well. We need to 
+		load the decentralized registry first, via <b>Registry.loadRegistry()</b>. 
+		Finally, we query the registry for the object by executing <b>
+		Registry.lookup()</b>. Note that we need to load the registry because we 
+		have not instantiated any object. In the server's case we do not need to 
+		do so, as you can see above.</font></p>
+</blockquote>
+<ul>
+<li><span lang="es"><font size="2">You now need to compile these 
+			classes, preferrably using ANT.</font></span></li>
+<li><span lang="es"><font size="2">Now you've done it! Simply test 
+			the object by invoking the server first, and the client next.</font></span></li>
+</ul>
+<p> </p>
+<p><u><font size="2"><b>STATEFUL REPLICATED OBJECTS</b></font></u></p>
+<p><font size="2">You can create stateful replicated objects in Dermi. That 
+	is, the object's server state will be replicated among its replicas. When 
+	new replicas of this object are created, the state will be automatically 
+	propagated to these new objects.</font></p>
+<p><font size="2">To activate such functionality, you Dermi object 
+	implementation must implement the <b>StatefulReplica</b> interface.</font></p>
+<blockquote>
+<p><font face="Courier New" size="2">package dermi.samples.replicastate;<br/>
+<br/>
+<b>import dermi.*;<br/>
+		import dermi.exception.*;<br/>
+</b><br/>
+		import java.io.Serializable;<br/>
+		import java.util.Properties;<br/>
+<br/>
+		public class SpriteImpl <b>extends DermiRemoteObject implements Sprite,
+		<span style="background-color: #00FFFF">StatefulReplica</span></b> {<br/>
+   private int x;<br/>
+<br/>
+   // Dermi constructor: REQUIRED<br/>
+   public SpriteImpl() {<br/>
+   }<br/>
+<br/>
+   // Dermi constructor: REQUIRED<br/>
+   public SpriteImpl (int x, Properties env) throws RemoteException {<br/>
+      super (env);<br/>
+      // Default x value<br/>
+      this.x = x;<br/>
+<br/>
+      // Load replica state<br/>
+      super.loadReplicaState();<br/>
+      System.out.println ("[Sprite] object created.");<br/>
+   }<br/>
+<br/>
+   public int getX() throws RemoteException {<br/>
+      System.out.println ("[getX] called: " + x);<br/>
+      return x;<br/>
+   }<br/>
+<br/>
+   public void setX (int x) throws RemoteException {<br/>
+      System.out.println ("[setX] called.");<br/>
+      this.x = x;<br/>
+   }<br/>
+<br/>
+   /**<br/>
+    * Method for loading state into this object<br/>
+    * @param data SpriteValues Object state<br/>
+    */<br/>
+   <span style="background-color: #00FFFF">public void 
+		loadRemoteObjectState() throws RemoteException {</span><br/>
+      <span style="background-color: #00FFFF">
+		SpriteData data = (SpriteData) super.loadState();</span><br/>
+      <b>this.x = data.getX();</b><br/>
+      System.out.println ("[loadRemoteObjectState] - 
+		new state loaded: " + x);<br/>
+   }<br/>
+<br/>
+   /**<br/>
+    * Method for obtaining this object's state<br/>
+    * @return SpriteData<br/>
+    */<br/>
+   <span style="background-color: #00FFFF">public Serializable 
+		getRemoteObjectState() {</span><br/>
+     <span style="background-color: #00FFFF">return new 
+		SpriteValues (x);</span><br/>
+   }<br/>
+		}</font></p>
+</blockquote>
+<p><font size="2">Any object implementing the <b>StatefulReplica</b> 
+	interface must provide the <b>loadRemoteObjectState()</b> and <b>
+	getRemoteObjectState()</b> methods. The former is called when initializing 
+	the replica to load the received state. It must obtain the state via network 
+	by calling<b> super.loadState()</b> method. This method returns a<b> 
+	Serializable</b> object which will be the replica's state. It must then be 
+	casted to the appropriate defined type (in this case <b>SpriteData</b>). <b>
+	getRemoteObjectState()</b> is provided in order to get this object's state. 
+	It will be automatically called by Dermi so as to obtain this object's state, 
+	prior to serializing it through the network.</font></p>
+<p><font size="2">For more information, take a look at </font><span lang="es"><font size="2"><i> 
+	./src/dermi/samples/replicastate/*.java.</i></font></span></p>
+<p> </p>
+<p><u><font size="2"><b>HOW TO USE Dermi WITH OTHER AVAILABLE DHTs?</b></font></u></p>
+<p><font size="2">An adaptation layer has been created from version 1.1 of 
+	Dermi, so as it can be easily adapted to different available Key-Based 
+	Routing (KBR) substrates. If you wish to provide Dermi with compatibility 
+	with another overlay network substrate, you should make sure there exists 
+	some kind of topic-based publish/subscribe event service on top of it. In 
+	our case, we have implemented Dermi over Pastry, and Scribe. In order to 
+	make Dermi compatible with another overlay network, you must implement a 
+	series of classes, which are detailed as follows, showing Pastry and 
+	Scribe's example:</font></p>
+<p> </p>
+<table bgcolor="#C0C0C0" border="1" id="table3" style="border-style: solid" width="100%">
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189"><b><font size="2">Package</font></b></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="363"><b><font size="2">Overlay network class</font></b></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-bottom-style: solid; border-bottom-width: 1px"><b><font size="2">Implements</font></b></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189"><font size="2">
+			dermi.core.pastry</font></td>
+<td style="border-style: solid; border-width: 1px" width="363"><font size="2">
+			DermiConnection</font><p>
+<font size="2">DermiContent</font></p>
+<p><font size="2">Id</font></p>
+<p><font size="2">InterceptorApp</font></p>
+<p><font size="2">Node</font></p>
+<p><font size="2">NodeHandle</font></p>
+<p><font size="2">ScribeClient</font></p>
+<p><font size="2">Topic</font></p></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px"><font size="2">
+			dermi.core.DermiConnection</font><p>
+<font size="2">dermi.core.DermiContent</font></p>
+<p><font size="2">dermi.core.Id</font></p>
+<p><font size="2">dermi.core.InterceptorApp</font></p>
+<p><font size="2">dermi.core.Node</font></p>
+<p><font size="2">dermi.core.NodeHandle</font></p>
+<p><font size="2">dermi.core.Client</font></p>
+<p><font size="2">dermi.core.Client</font></p></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189"><font size="2">
+			dermi.messaging.pastry</font></td>
+<td style="border-style: solid; border-width: 1px" width="363"><font size="2">
+			*</font></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px"><font size="2">
+			All messages are specific to the overlay and cannot be made generic</font></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189"><font size="2">dermi.registry.pastry</font></td>
+<td style="border-style: solid; border-width: 1px" width="363"><font size="2">Naming</font></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px"><font size="2">dermi.registry.Naming</font></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px" width="189">
+<font size="2">dermi.session.pastry</font></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px" width="363"><font size="2">
+			Session</font><p><font size="2">
+			NotificationParser</font></p></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px">
+<font size="2">dermi.Session</font><p><font size="2">
+			dermi.session.DermiApplicationListener</font></p></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px" width="189">
+<font size="2">dermi.util.pastry</font></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px" width="363">
+<font size="2">HashGenerator</font></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px">
+<font size="2">Utility class to generate hashes</font></td>
+</tr>
+</table>
+<p> </p>
+<p><font size="2">To sum up, and looking at the previous example, you should 
+	code all the above specified classes, implementing all required Dermi 
+	interfaces. The package names must follow the same template. For example, in 
+	case we wanted to support Dermi on top of Chord, we would implement the 
+	classes in the packages <b>dermi.core.chord, dermi.messaging.chord, 
+	demi.registry.chord</b>, and <b>dermi.session.chord</b>.</font></p>
+<p><font size="2">In order to use Dermi with one KBR overlay or another, you 
+	must specify the package name (<b>chord</b> in our case) in the different 
+	configuration files we are using. For instance, <b>dermi-config.xml</b>: 
+	change the lines <b><i>"&lt;entry key="dermi.underlyingDHT"&gt;<span style="background-color: #00FFFF">chord</span>&lt;/entry&gt;"</i></b>, 
+	and <b><i>"&lt;entry key="dermi.sessionClass"&gt;dermi.session.<span style="background-color: #00FFFF">pastry</span>.Session&lt;/entry&gt;"</i></b> 
+	accordingly.</font></p></div>
+</div>
+</td>
+</tr>
+<tr><td> </td></tr>
+</table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width:100%">
+<tr>
+<td>
+<script language="JavaScript" src="http://m1.nedstatbasic.net/basic.js">
+</script>
+<script language_"javascript"="">
+//document.write("<HR WIDTH=100%>");
+<!--
+  nedstatbasic("ACGYTQ5NdPkvs9a7Yx5Va/rFS+Tg",0);
+// -->
+
+           </script>
+<noscript>
+<a href="http://v1.nedstatbasic.net/stats?ACGYTQ5NdPkvs9a7Yx5Va/rFS+Tg" target='_blank"'><img border="0" nosave="" src="http://m1.nedstatbasic.net/n?id=ACGYTQ5NdPkvs9a7Yx5Va/rFS+Tg" width="18"/></a></noscript>
+<font size="2">© 2003-2005 Carles Pairot
+						<a href="mailto:%3Ccpairot@etse.urv.es">
+						&lt;carles.pairot@urv.net</a>&gt;</font></td>
+</tr>
+</table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/DERMI/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:08:52 GMT -->
+</html>
+</html>

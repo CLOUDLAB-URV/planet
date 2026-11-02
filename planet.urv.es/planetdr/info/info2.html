@@ -1,0 +1,143 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Mirrored from planet.urv.es/planetdr/info/info2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:15:22 GMT -->
+<head><meta charset="utf-8"/>
+<title>PLANET Digital Repository</title>
+<style type="text/css">
+      @import url("../style/tigris.css");
+      @import url("../style/maven.css");
+  </style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="composite" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr valign="top">
+<td id="leftcol" width="126">
+<div> <strong>Information</strong> <br/><br/>
+<div> <small> <a href="../body.html#news">News</a> </small> </div>
+<div> <small> <a href="info1.html">Educational Contents</a> </small> </div>
+<div> <small> <strong>DRI</strong> </small> </div>
+<div> <small> <a href="info3.html">ECL</a> </small> </div>
+<div> <small> <a href="info4.html">EduSource</a> </small> </div>
+<div> <small> <a href="info5.html">Authors</a> </small> </div>
+<div> <small> <a href="info6.html">Collaborators</a></small></div>
+<div> <small> <a href="info7.html#download"> Download</a></small></div>
+<div> <small> <a href="info7.html#install">Installation</a> </small> </div>
+<div> <small> <a href="info9.html">Site Administration</a> </small> </div>
+<div> <small> <a href="info10.html">Registered Users</a> </small> </div>
+<div> <small> <a href="info11.html">Communities</a> </small> </div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3> <font size="2">DRI</font></h3>
+<p><font size="2"><b>Digital Repositories Interoperability</b></font></p>
+<p align="left"><font size="2">The purpose of this specification
+is to provide recommendations for the interoperation </font> <font size="2"> of the most</font> <font size="2">common repository
+functions. </font><font size="2"> These recommendations should be
+implementable across services to enable then to present a common
+interface. This specification is intended to utilize schemas already
+defined elsewere (e.g., IMS Meta-Data and Content Packaging), rather
+than attempt to introduce any new schema.</font></p>
+<p align="left"> <font size="2">This specification acknowledges
+that a wide range of content formats, implemented systems,
+technologies, and </font><font size="2">established practices already
+exist in the area of digital repositories. Consequently, its </font><font size="2">recommendations consistently </font><font size="2">acknowledge
+two generalized implementation scenarios, or two different repository
+types: Systems reflecting established practice (e.g., that utilize
+Z39.50) for repository interoperability and Repositories that are able
+to implement the XQuery and SOAP-based recommendations as put forward
+in this specification.</font></p>
+<p align="left"><font size="2">XML is an extremely versatile
+mark-up language, capable of labeling the information content of
+diverse data sources including structured and semi-structured
+documents, relational databases, and object repositories. The W3C
+XQuery l</font><font size="2">anguage uses the structure of XML
+intelligently to express queries across all these kinds of data,
+whether physically stored in XML or viewed as XML via middleware.</font></p>
+<p align="left"><font size="2">SOAP is the Simple Object Access
+Protocol.SOAP provides a simple and lightweight mechanism for
+exchanging structured and typed information between peers in a
+decentralized, distributed environment using XML. </font><font size="2">SOAP,
+when combined with WSDL (Web Services Description Language), allows Web
+service providers to specify what services they can provide, what the
+inputs and outputs to those services are, and how to encode/decode the
+requests and responses exchanged between the clients and servers. SOAP
+and WSDL are programming language neutral and free toolkits for both
+clients and servers are available in a number of languages.</font></p>
+<p align="left"><font size="2">These core functions are:</font></p>
+<ul>
+<li><font size="2"><b>Search/Expose:</b> The Search reference
+model defines the searching of the meta-data associated with content
+exposed by repositories.<font face="Times New Roman" size="2"> </font>Searching
+is performed using the XQuery protocol over XML meta-data, adhering to
+the IMS Meta-Data Schema. IMS Content Packaging is assumed as the
+format for Submit/Store.</font><font size="2">XQuery for searching IMS
+(XML) meta-data format. XQuery is being developed by a W3C working
+group. It has </font><font size="2">a well-developed grammar, and</font><font size="2"> several commercial implementations are emerging from the
+community. Its </font><font size="2">strengths are query-by-example
+and structured searches of XML documents and repositories </font><font size="2">containing IMS </font><font size="2">meta-data.</font></li>
+<li><font size="2"><b>Submit/Store:</b></font> <font size="2">Submit/Store
+functionality refers to the way an object is moved to a repository from
+a given network-accessible location, and how the object will then be
+represented in that repository for access. The location from which an
+object is moved can be another repository, a learning management
+system, a developer’s hard-drive, or any other networked location. It
+is anticipated that existing repository systems may already have
+established means for achieving Submit/Store functions (typically FTP).
+This specification provides no particular recommendations for legacy
+repository systems, but wishes to draw attention to the following
+weaknesses of FTP as a transport mechanism for learning objects or
+other assets: Plain FTP provides no encryption capabilities, presents
+widely-recognized security and does not provide means of confirming the
+successful delivery of assets from one networked location to another.
+In the case of more recently developed repositories that deal
+specifically with learning objects, this specification makes
+significant reference to the IMS Content Packaging Specification.</font></li>
+<li><font size="2"><b>Request/Deliver: </b>T</font><font size="2">he Request functional component allows a resource utilizer
+that has located a meta-data record via the Search (and possibly via
+the Alert) function to request access to the learning object or other
+resource described by the meta-data. Deliver refers to the response
+from the repository which provides access to the resource.</font></li>
+<li><font size="2"><b>Gather/Expose: </b>The Gather reference
+model defines the soliciting of meta-data exposed by repositories and
+the aggregation of the meta-data for use in subsequent searches, and
+the aggregations of the meta-data to create a new meta-data repository.
+The aggregated repository becomes another repository available for
+Search/Expose Alert/Expose functions. </font><font size="2">The Gather
+component may interact with repositories in one of two ways. It either
+actively solicits meta-data from a repository, or subscribes to a
+meta-data notification service (newly created, </font><font size="2">updated,
+or deleted) provided by the repository or by an adapter external to a
+repository that enables messaging between the repository and other
+users (push).</font></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="footer"> <br/>
+<br/>
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<p style="text-align: center">
+<font id="app" size="1">PlanetDR: Planet Digital Repository.<br/>
+		A Research Project from
+		<a alt="Universitat Rovira i Virgili" href="http://www.urv.net/">URV</a>.</font>
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/planetdr/info/info2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:15:22 GMT -->
+</html>

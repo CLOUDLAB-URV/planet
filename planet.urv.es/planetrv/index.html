@@ -1,0 +1,803 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html lang="es-es">
+<!-- Mirrored from planet.urv.es/planetrv/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:02:26 GMT -->
+<head><meta charset="utf-8"/>
+<title>PlanetRV : Entorno de colaboraci&amp;oacuten aumentada</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="es" http-equiv="Content-Language"/>
+<style type="text/css">
+
+
+
+          @import url("style/tigris.css");
+
+
+
+          @import url("style/maven.css");
+
+
+
+
+
+
+
+ li.MsoNormal
+
+    {mso-style-parent:"";
+
+    margin-bottom:.0001pt;
+
+    font-size:12.0pt;
+
+    font-family:"Times New Roman";
+
+    margin-left:0cm; margin-right:0cm; margin-top:0cm}
+
+  </style>
+<meta content="MSHTML 6.00.2900.2802" name="GENERATOR"/>
+</head>
+<body class="composite">
+<div id="banner">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="vertical-align: middle; text-align: center;" width="217">
+<p style="text-align: justify;"><img border="0" height="148" src="images/logoplanetrv.jpg" width="148"/></p>
+</td>
+<td style="vertical-align: bottom; text-align: center;">
+<p style="text-align: justify;"><span style="text-decoration: none;"><a href="index-2.html"></a></span>      <font size="4"><span style="font-weight: 700;"><a href="index-2.html">
+        PlanetRV</a></span></font><span style="font-weight: 700; text-decoration: none;"><a href="index-2.html"><font size="4"> </font></a></span></p>
+</td>
+<td width="222">
+<div align="right" id="login">
+<p align="justify"><a href="http://ants.etse.urv.es/planet"><img border="0" height="149" src="images/logoplanet.jpg" width="148"/></a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tbody>
+<tr>
+<td width="286">
+<p style="text-align: justify;"><font size="2">Last Updated: 28 May 2007</font></p>
+</td>
+<td>
+<p style="text-align: justify;"><font size="2"><a href="http://ants.etse.urv.es/planet/"><img alt="" class="handle" height="7" src="images/none.png" width="7"/>PLANET
+        Project Page</a> | <a href="http://www.etse.urv.es/recerca/ast/"><img alt="" class="handle" height="7" src="images/none.png" width="7"/>AST
+        Research Group</a>
+</font> <font size="2">  </font></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr valign="top">
+<td id="leftcol" width="181">
+<div id="navcolumn">
+<div>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify;"><strong>
+        PlanetRV</strong></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify;"> </p>
+<p style="margin: 0cm 0cm 0pt; background: rgb(242, 245, 247) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: justify;"><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Description"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1029" src="images/none.png" width="7"/></span><span lang="EN-GB" style="text-decoration: none;">Description</span></a></span></p>
+<p style="margin: 0cm 0cm 0pt; background: rgb(242, 245, 247) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: justify;"><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Architecture"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1034" src="images/none.png" width="7"/></span></a><span lang="en-gb"><a href="#Documentation">Documentation</a></span></span><span lang="EN-GB" style="font-size: 10pt; color: black; font-family: Verdana;"><br/>
+</span><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Architecture"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1030" src="images/none.png" width="7"/></span><span lang="EN-GB" style="text-decoration: none;">Videos</span></a></span><span lang="EN-GB" style="font-size: 10pt; color: black; font-family: Verdana;"><o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt; background: rgb(242, 245, 247) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: justify;"><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Downloads"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1031" src="images/none.png" width="7"/></span><span lang="EN-GB" style="text-decoration: none;">Downloads</span></a></span><span lang="EN-GB" style="font-size: 10pt; color: black; font-family: Verdana;"><br/>
+</span><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Authors"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1032" src="images/none.png" width="7"/></span><span lang="EN-GB" style="text-decoration: none;">Authors</span></a></span><span lang="EN-GB" style="font-size: 10pt; color: black; font-family: Verdana;"><br/>
+</span><span style="font-size: 10pt; color: black; font-family: Verdana;"><a href="#Related_Work"><span style="text-decoration: none;"><img border="0" class="handle" height="7" id="_x0000_i1033" src="images/none.png" width="7"/></span><span lang="EN-GB" style="text-decoration: none;">Related
+        Work</span></a></span><span lang="EN-GB" style="font-size: 10pt; color: black; font-family: Verdana;"><o:p></o:p></span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify;"> </p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify;"><font size="2"><br/>
+
+
+ </font></p>
+</div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3 style="text-align: justify;"><font size="2"><a name="Description">
+        Description</a></font></h3>
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+        Planet stands for Augmented Collaborative Plataform for content
+        distribution and advanced training.<br/>
+
+
+        We outline two main research lines in Planet:  augmented
+        collaboration environments and distributed systems.<br/>
+
+
+        The Planet AR subproject has focused on the former research line
+        stressing the importance of low-cost devices and interfaces for advanced
+        educational settings.<br/>
+<br/>
+
+
+        After an initial evaluation study of different technologies and virtual
+        reality devices (see study), we concluded that the use of low-cost
+        devices is mandatory if we want to develop systems for a wider <br/>
+
+
+        audience. In this line, we have developed several prototypes (see
+        videos) of augmented collaboration environments based on low-cost video
+        capturing technologies and applications  like eyesWeb, ARToolkit,
+        AMIRE, ... .<br/>
+<br/>
+
+
+        Finally, we have decided to choose low-cost augmented reality as our key
+        technology for PlanetAR. We thus bet on low-cost augmented reality with
+        cheap webcams and fiducial marker recognition using machine vision. As a
+        result of our research work we have developed the MRPlanet CAD/AR (Computer
+        Aided Design for augment reality) toolkit as a simple tool for advanced
+        training environments. We are now studying posible applications of
+        MrPlanet in several learning scenarios like Architecture or Medicine.<br/>
+<br/>
+
+
+        We also outline that works developed under the umbrella of PlanetAR have
+        lead to the creation of a Spin-Off enterprise (ApFeel) awarded in 2006
+        with an innovation and entrepreneurship grant.<br/>
+<br/>
+<br/>
+
+
+        NOTE: Augmented reality (AR) is a field of computer research which deals
+        with the combination of real world and computer generated data. Instead
+        of diving the user into a synthesized, purely informational environment
+        (virtual reality), the goal of AR is to augment the real world with
+        information handling capabilities.</span></p>
+<p style="text-align: justify;"> </p>
+<h3 style="text-align: justify;"><a name="Documentation"><span style="background-repeat: repeat;"><font size="2">
+        Documentation</font></span></a></h3>
+<ul>
+<li>
+<p style="text-align: justify;"><b><font size="2">
+<span lang="es" style="font-family: Verdana;">"Informe de valoración
+            de dispositivos hardware", Toni Tur, January 2006</span></font></b></p>
+<ul>
+<li>
+<p style="text-align: justify;"><span style="font-family: Verdana;"><b><u><span style="font-size: 10pt;">
+                Download</span></u><font size="2">:
+
+          </font></b><span style="font-size: 10pt;">
+<a href="media/Valoracion_Dispositivos_Hardware.pdf"><span style="text-decoration: none;">
+                Valoración_Dispositivos_Hardware.pdf</span></a></span></span></p>
+</li>
+</ul>
+<p style="text-align: justify;"> </p>
+</li>
+</ul>
+<h3 style="text-align: justify;"><font size="2"> </font><a name="Architecture"><span style="background-repeat: repeat;"><font size="2">Videos</font></span></a></h3>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><font size="2"><span style="font-family: Verdana;">
+            Demonstration of the possibilities for the interaction with
+            augmented reality systems</span></font></b>
+</p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Demostración incluida en la librería
+            Artoolkit de realidad aumentada para la interacción</span>. </p>
+</li>
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/interaction.html">
+            Interaction.divx</a>
+</span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Locomotion interface</font></span></b> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;">
+<span lang="es" style="font-size: 10pt; font-family: Verdana;">
+            Proyecto realizado por Jelena Vico, Sebastian Skoknic y Toni Tur
+            durante el año 2001-2002 en el contexto del master en artes
+            digitales organizado por la universidad Pompeu Fabra y el instituto
+            del audiovisual. Mediante el empleo de una cinta para andar el
+            usuario puede desplazarse de un modo natural por los espacios
+            arquitectónicos y urbanísticos sintéticos. Entre otras innovaciones,
+            el sistema permite al usuario percibir las distancias relativas
+            entre los modelos CAD haciéndole consciente de los tiempos
+            necesarios para efectuar los recorridos.</span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/locomotion1.avi">
+            locomotion1.avi</a>
+</span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Locomotion interface II</font></span></b> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Evolución</span>
+
+            del proyecto "cinta andadora" en el contexto del proyecto Planet.
+
+          </p>
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Avances:</span>
+</p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal">
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+                Mejoras en la circuitería de la interfaz.</span> </p>
+</li>
+<li class="MsoNormal">
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+                Adaptación</span>
+
+                del sistema para su empleo con el software Quest 3d. </p>
+</li>
+<li class="MsoNormal">
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+                Integración</span>
+
+                en el sistema de un modelo de vivienda cedido por la empresa
+                Animag de Barcelona. </p>
+</li>
+<li class="MsoNormal">
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+                Visionado en estereoscopia de los entornos y objetos.</span> </p>
+</li>
+</ul>
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/locomotion2.html">
+            locomotion2.divx</a>
+</span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Uses of the augmented reality in the catalogue preparation and
+            enriched tex</font></span><span style="font-size: 10pt; font-family: Verdana;">t</span></b><span style="font-family: Verdana;"><o:p></o:p></span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Prototipo de catalogo para mobiliario empleando las tecnologías
+            de realidad aumentada.</span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/furniture.html">
+            furniture.divx</a> </span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Possibilities of the augmented reality for the design of interiors
+            with furniture to natural size</font></span></b> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Demostración
+
+            para la valoración de las posibilidades para
+            la distribución de objetos CAD a tamaño
+            natural en espacios arquitectónicos.
+
+          </span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/scale_furniture.html">
+            scale_furniture.divx</a>
+</span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Interactive kiosk</font>
+</span></b><span style="font-family: Verdana;"><o:p></o:p></span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Prototipo de sistema de seguimiento por visión
+            artificial para la distribución
+
+            de objetos CAD en entornos sintéticos.
+            Mediante el seguimiento en el desplazamiento de una serie de fichas
+            de colores se distribuyen modelos CAD de mobiliario en entornos
+            virtuales.</span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/kiosk.html">
+            kiosk.divx</a> </span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><font size="2"><span style="font-family: Verdana;">
+            Virtual TV</span></font></b> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Demostración
+
+            para el uso de publicidad virtual gracias a las tecnologías
+            de la realidad aumentada. </span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/tv.html">
+            tv.divx</a> </span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Xylophone</font>
+</span></b><span style="font-family: Verdana;"><o:p></o:p></span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Prototipo de sistema de seguimiento por visión
+            artificial para el uso de un puntero 3d en la manipulación
+            de objetos CAD con visión estereoscópica
+            mediante shutterglasses.</span></p>
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            A partir de los datos recogidos con dos videocámaras se logra
+            un seguimiento en los tres ejes del espacio de un objeto de
+            color rojo. Mediante el desplazamiento de este objeto por parte del
+            usuario se posibilita la interacción con
+            modelos CAD. En el ejemplo observamos la interacción
+            con un xilofón virtual en el que cuando el
+            puntero colisiona con sus teclas se activa un audio.</span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/xylophone.avi">
+            xylophone.avi</a> </span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><span style="font-family: Verdana;"><font size="2">
+            Architect</font>
+</span></b><span style="font-family: Verdana;"><o:p></o:p></span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Architect is an application that demonstrates the possibilities of
+            augmented reality in designs of architecture, allows to visualize
+            and manipulate objects 3D by means of a virtual office, includes a
+            module for import 3DS files and persistence based on XML files.</span> </p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: <a href="media/Architect.html">
+            Architect.divx</a> </span></p>
+</li>
+</ul>
+</ul>
+<p style="text-align: justify;"> </p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><font size="2"><b><span style="font-family: Verdana;">
+            Mr. Planet</span></b></font><b><span style="font-family: Verdana;"> </span></b><span style="font-family: Verdana;"><o:p></o:p></span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="disc">
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;">
+            Mr.Planet es una aplicación de Realidad
+            Aumentada con un diálogo sencillo con el usuario. El usuario es
+            capaz de relacionar modelos 3D realizados con su editor preferido
+            (AutoCad, 3D Studio, ...) con una gran variedad de patrones de
+            Realidad Aumentada. La herramienta permite modificar el escalado,
+            rotar el modelo y trasladarlo en relación
+            al patrón con un sencillo menú
+            de opciones. Se incluye en la aplicación
+            un sistema multipatrón que permite relacionar
+            un mismo modelo 3D a varios patrones de tal forma que el modelo se
+            dibujaría
+            en su posición con tal solo verse un
+            patrón de su lista. Por otro lado, cada patrón
+            puede tener relacionados varios modelos y, al poder trasladarse,
+            dibujarse en sitios separados. </span></p>
+</li>
+</ul>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span style="font-size: 10pt; font-family: Verdana;">
+            Download</span></u></b><span style="font-size: 10pt; font-family: Verdana;">: </span></p>
+</li>
+</ul>
+<blockquote>
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;"><a href="media/MrPlanet_1.html">
+            MrPlanet_1.divx</a> </span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;"><a href="media/MrPlanet_2.html">
+            MrPlanet_2.divx</a> </span><span style="font-family: Verdana;"><o:p>
+             </o:p></span></p>
+<p style="text-align: justify;"><span style="font-size: 10pt; font-family: Verdana;"><a href="media/MRPlanet_castle.html">
+            MrPlanet_castle.divx</a></span></p>
+</blockquote>
+</ul>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="color: rgb(31, 53, 77); font-family: Verdana;">
+         </span> <br/>
+</p>
+<h3 style="text-align: justify;"><span style="background-repeat: repeat;"><font size="2"><a name="Downloads">
+        Downloads</a></font></span></h3>
+<table border="0" cellpadding="8" cellspacing="0" id="table1" width="100%">
+<tbody>
+<tr valign="top">
+<td rowspan="2">
+<div id="bodycol0">
+<div class="app">
+<div class="h3">
+<blockquote>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><b><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Mr. Planet Dos</span></b></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><i><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Distribution</span></i><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">:
+                Written in C++ using <a href="http://www.ogre3d.org/">OGRE</a></span></p>
+<ul>
+<li><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+<p style="text-align: justify;"><span style="font-weight: bold;">May</span> <strong><font size="2"><b><span style="font-size: 10pt; font-family: Verdana;">28, 2007.  New release (2.0.1)</span></b></font></strong></p>
+</span></li>
+<ul>
+<li><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana; font-weight: bold;"><a href="http://sourceforge.net/project/showfiles.php?group_id=185276&amp;package_id=232168&amp;release_id=508772">installer<br/>
+</a></span></li>
+</ul>
+<li><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+<p style="text-align: justify;"><span style="font-weight: bold;">January</span> <strong><font size="2"><b><span style="font-size: 10pt; font-family: Verdana;">03, 2007.  GPL Code</span></b></font></strong></p>
+</span></li>
+<ul>
+<li><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana; font-weight: bold;"><a href="http://sourceforge.net/projects/mrplanet/">http://sourceforge.net/projects/mrplanet<br/>
+</a></span></li>
+</ul>
+</ul>
+<br/>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"></p>
+<ul>
+<li><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+<p style="text-align: justify;"><strong><font size="2">
+<span style="font-family: Verdana;">November</span><b><span style="font-size: 10pt; font-family: Verdana;">
+                    22, 2006.  Release version</span></b></font></strong></p>
+</span></li>
+<ul>
+<li><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><font size="2"><b><span style="font-size: 10pt; font-family: Verdana;">
+                    Download:</span></b></font></span><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;"></span></li>
+</ul>
+</ul>
+<div style="margin-left: 80px;"><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana; font-weight: bold;"><a href="media/MrPlanet2_Installer.exe">
+                MrPlanet2_Installer.exe</a>
+
+                  [Installer for Windows ]</span>
+<p><span lang="en-gb">
+<font size="2"><span style="font-weight: 700;">User Manual [<a href="media/Manual_esv2.pdf">Spanish (23MB)</a>]</span></font></span>
+<font size="2"><span style="font-weight: 700;"> [<a href="media/Manual_esv2.pdf.zip">Spanish (zip) (2,2MB)</a>]</span></font>
+<font size="2"><span style="font-weight: 700;"> [<a href="media/Manual_env2.pdf">English (23MB)</a>]</span></font>
+<font size="2"><span style="font-weight: 700;"> [<a href="media/Manual_env2.pdf.zip">English (zip) (2,2MB)</a>]</span></font></p>
+<p><span lang="en-gb"><font size="2">
+<span style="font-weight: 700;"><a href="media/mrplanet.wmv">MrPlanet.wmv
+                (23,9MB)</a>[Video example] [<a href="media/mrplanet.avi">divx
+                (76,5MB)</a>]</span></font></span><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana; font-weight: bold;"><br/>
+</span><font color="#ff0000" size="1"><span style="font-family: Verdana;">
+                 <br/>
+<br/>
+</span></font><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><strong></strong></span></p>
+</div>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><b><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Mr.
+
+              </span><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Planet<span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+
+              Lite</span></span></b></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><i><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Distribution</span></i><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">:
+                Binary code, written in C++ with OPENGL.</span></p>
+<ul style="margin-bottom: 0cm;" type="disc">
+<span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><strong><font size="2">
+<span style="font-family: Verdana;">May</span><b><span style="font-size: 10pt; font-family: Verdana;">
+                    22, 2006. Patch Full Screen for Release 1.1</span></b></font></strong></p>
+<strong><font size="2">
+<ul>
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+                        Download</span></u></b><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">:
+
+                  </span></p>
+<p style="text-align: justify;">
+<span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+<a href="media/MRPlanetLiteFS.exe">MrPlanetLiteFS.exe</a>
+
+                    [binaries ]</span><font color="#ff0000" size="1"><span style="font-family: Verdana;">
+                    Note: You must copy this file into release folder </span>
+</font></p>
+<p style="text-align: justify;">
+
+                     </p>
+</li>
+</ul>
+</font></strong></li>
+</span>
+<span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><font size="2"><strong><b>
+<span style="font-size: 10pt; font-family: Verdana;">April 03,
+                    2006. Release 1.1 (improvement of  scene's persistence)</span></b> </strong></font></p>
+<font size="2"><strong>
+<ul>
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u>
+<span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+                        Download</span></u></b><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">:
+
+                    </span></p>
+<p style="text-align: justify;">
+<span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+<a href="media/MrPlanet_release-1.1.zip">
+                    MRPlanetLite-1.1-Release.zip</a>
+
+                    [binaries ]</span></p>
+<p style="text-align: justify;"> </p>
+</li>
+</ul>
+</strong></font></li>
+</span>
+<font size="2"><strong> <li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b>
+<span style="font-size: 10pt; font-family: Verdana;">February</span></b><font size="2"> </font><b>
+<span style="font-size: 10pt; font-family: Verdana;">22, 2006.
+                    Release 1</span><span style="font-family: Verdana;">.</span><span style="font-size: 10pt; font-family: Verdana;">0</span></b><span style="font-family: Verdana;"><o:p></o:p></span> </p>
+<ul style="margin-bottom: 0cm;" type="circle">
+<li class="MsoNormal" style="color: rgb(31, 53, 77);">
+<p style="text-align: justify;"><b><u>
+<span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+                        Download</span></u></b><span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">:
+
+                    </span></p>
+<p style="text-align: justify;">
+<span lang="EN-GB" style="font-size: 10pt; font-family: Verdana;">
+<a href="media/MRPlanetLite-1.0-Release.zip">
+                    MRPlanetLite-1.0-Release.zip</a>
+
+                    [binaries ]</span><span lang="EN-GB" style="font-family: Verdana;"></span></p>
+<p style="text-align: justify;">
+<span style="font-size: 10pt; font-family: Verdana;">
+<a href="media/Snapshots.zip">SnapShots</a><u>.zip</u></span><u>
+</u></p>
+</li>
+</ul>
+</li>
+</strong></font>
+</ul>
+<font size="2"><strong> </strong></font></blockquote>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top">
+<td> </td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;"><span style="background-repeat: repeat;"><font size="2"><a name="Authors">
+        Authors</a></font></span></h3>
+<blockquote>
+<ul>
+<li>
+<div class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><b><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><a href="http://www.etse.urv.es/~pgarcia"><span lang="EN-GB" style="">
+                Pedro García López</span></a></span></b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">,
+                full-time professor in the Department of Computer Science and
+                Mathematics at Universitat Rovira i Virgili in <st1:place w:st="on"><st1:city w:st="on">
+                Tarragona</st1:city>, <st1:state w:st="on">Catalonia</st1:state>, <st1:country-region w:st="on">
+                Spain</st1:country-region></st1:place>. Contact </span><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><a href="mailto:pgarcia@etse.urv.es"><span lang="EN-GB" style="">
+                &lt;pgarcia@etse.urv.es</span></a></span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">&gt;
+
+          </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></div>
+</li>
+</ul>
+<p class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<ul>
+<li>
+<div class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Maria Ferré</span></b>, full-time professor in the Department of
+                Computer Science and Mathematics at Universitat Rovira i Virgili
+                in <st1:place w:st="on"><st1:city w:st="on">Tarragona</st1:city>, <st1:state w:st="on">
+                Catalonia</st1:state>, <st1:country-region w:st="on">Spain</st1:country-region></st1:place>.<span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></div>
+</li>
+</ul>
+<p class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<ul>
+<li>
+<div class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Toni Tur</span></b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">,
+                research collaborator, at Universitat Rovira i Virgili in <st1:place w:st="on"><st1:city w:st="on">
+                Tarragona</st1:city>, <st1:state w:st="on">Catalonia</st1:state>, <st1:country-region w:st="on">
+                Spain</st1:country-region></st1:place>.</span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></div>
+</li>
+</ul>
+<p class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><span style="left: -3.78%; position: absolute;">
+        Â–</span></span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<div>
+<p class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<div>
+<ul>
+<li>
+<div class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Helio Tejedor Navarro</span></b><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">,
+                Graduated of M. Sc. Computer Science in the Department of
+                Computer Science and Mathematics at Universitat Rovira i Virgili
+                in <st1:place w:st="on"><st1:city w:st="on">Tarragona</st1:city>, <st1:state w:st="on">
+                Catalonia</st1:state>, <st1:country-region w:st="on">Spain</st1:country-region></st1:place>. </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></div>
+</li>
+</ul>
+<p class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+</div>
+</div>
+<ul>
+<li>
+<div class="MsoNormal" style="margin: 0cm 5.25pt 0pt; text-align: justify;"><b><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Oscar Barrios Torrero</span></b><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">,
+                M. Sc.
+
+          </span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+                Computer Science Student in the Department of Computer Science
+                and Mathematics at Universitat Rovira i Virgili in Tarragona,
+                Catalonia, Spain.
+
+          </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></div>
+</li>
+</ul>
+</blockquote>
+<p style="text-align: justify;"><font face="Times New Roman" size="2"></font>
+         </p>
+<h3 style="text-align: justify;"><span style="background-repeat: repeat;"><font size="2"><a name="Related_Work">
+        Related Work</a></font></span></h3>
+<blockquote><font size="2">
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+        AR ToolKit</span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="color: rgb(31, 53, 77); font-family: Verdana;"><a href="http://www.hitl.washington.edu/artoolkit/"><span lang="EN-GB" style="font-size: 10pt;">
+        http://www.hitl.washington.edu/artoolkit/</span></a></span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+        Amire : authoring mixed reality</span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><a href="http://www.amire.net/"><span lang="EN-GB" style="">
+        http://www.amire.net/</span></a></span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+        DART:The Designer's Augmented Reality Toolkit </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><a href="http://www.gvu.gatech.edu/dart/"><span lang="EN-GB" style="">
+        http://www.gvu.gatech.edu/dart/</span></a></span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;">
+<span lang="en-gb" style="font-family: Verdana;">OGRE</span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">:</span><i>Object-oriented
+        Graphics Rendering Engine</i>
+<span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+         </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><span lang="EN-GB" style="">
+<a href="http://www.ogre3d.org/">http://www.ogre3d.org</a></span></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;">
+<span lang="en-gb" style="font-family: Verdana;">OGRE Forums</span><span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">:</span><i>Topic about Mr. Planet v2.0</i>
+<span lang="EN-GB" style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+         </span><span lang="EN-GB" style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 8.05pt 5.25pt; text-align: justify;"><span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;"><span lang="EN-GB" style="">
+<a href="http://www.ogre3d.org/phpBB2/viewtopic.php?t=26371&amp;postdays=0&amp;postorder=asc&amp;start=0">http://www.ogre3d.org/phpBB2</a></span></span></p>
+</font>
+<p style="text-align: justify;"><font size="2"></font> </p>
+</blockquote>
+<p style="text-align: justify;"><font size="2"><br/>
+</font></p>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="4" cellspacing="0" id="table2" style="width: 100%;">
+<tbody>
+<tr>
+<td width="2">
+</td>
+<td>
+<p style="text-align: justify;">
+<span style="font-size: 10pt; color: rgb(31, 53, 77); font-family: Verdana;">
+            © 2006 Oscar Barrios <a href="mailto:oscar.barrios@estudiants.urv.es">
+            &lt;oscar.barrios@estudiants.urv.es</a>&gt;</span><span style="color: rgb(31, 53, 77); font-family: Verdana;"><o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-979056-1";
+urchinTracker();
+</script>
+</body>
+<!-- Mirrored from planet.urv.es/planetrv/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:07:37 GMT -->
+</html>

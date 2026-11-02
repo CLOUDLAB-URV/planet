@@ -1,0 +1,890 @@
+﻿<html>
+<!-- Mirrored from planet.urv.es/damon/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:09:46 GMT -->
+<head><meta charset="utf-8"/><title>Damon : a Distributed AOP Middleware on top of a p2p Overlay Network</title>
+<style type="text/css">
+
+          @import url("style/tigris.css");
+
+          @import url("style/maven.css");
+
+
+
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:11.35pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Times;
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="en-gb" http-equiv="Content-Language"/>
+</head>
+<body class="composite">
+<div id="banner">
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+<tbody><tr>
+<td style="text-align: center; vertical-align: middle;" width="217">
+<a href="http://damon.sourceforge.net/">
+<img border="0" height="163" src="images/logodamon.jpg" width="163"/></a></td>
+<td style="text-align: center; vertical-align: middle;">
+<p style="text-align: center;"><span style="text-decoration: none;"><a href="index-2.html">
+<font size="5"></font></a></span>
+<font size="5">     
+
+                  </font>
+<font size="5">
+<a href="http://damon.sourceforge.net/">Damon : a <b>D</b>istributed <b>A</b>OP <b>M</b>iddleware on top of 
+					a p2p <b>O</b>verlay <b>N</b>etwork</a></font></p></td>
+<td width="200">
+<div align="right" id="login">
+<p align="center">
+<a href="http://www.p2pgrid.info/">
+<img border="0" height="129" src="http://www.p2pgrid.info/w/images/b/b2/P2pgrid9_big.png" width="273"/></a></p></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tbody><tr>
+<td width="286"><font size="2">Last Updated: 10 July 2008</font></td>
+<td>
+<div align="right">
+<font size="2"><a href="http://www.p2pgrid.info/">
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/><a href="http://www.p2pgrid.info/">P2PGRID 
+		Project Page</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/><a href="http://ast-deim.urv.cat/wiki/Ast">
+		AST
+		Research Group</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/>
+<a href="http://sourceforge.net/projects/damon/">Damon Sourceforge 
+		Project</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/> <a href="../bunshin/index.html">Bunshin</a>
+</a></font> <font size="2"> 
+
+		</font>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td id="leftcol" width="126">
+<div id="navcolumn">
+<div>
+<table width="1253">
+<tr valign="top">
+<td>
+<div id="bodycol">
+<div class="app">
+<h3><font size="2">Installation and Compilation</font></h3>
+<p style="text-align: justify"><font size="2">Damon distribution comes in the form of source code and a 
+	precompiled binary JAR package. The downloadable version consists of a <a href="http://www.winzip.com/">
+	ZIP</a> 
+				file which should be extracted to any directory. Damon comes 
+	with a set of samples and JUnit testbed which can be executed to proof Damon's skills.</font></p>
+<p style="text-align: justify"><font size="2">To execute these samples, you need at least <b>Java5 JRE 
+	v1.6.0</b>. You will experience problems if you use prior versions because 
+	the annotation functionalities were not available until JDK 1.5. However, 
+	for run all instrumentation capabilities, it must be work over
+	<b>Java6</b>.</font></p>
+<p style="text-align: justify"><font size="2">If you want to compile the sources, make sure you have 
+	installed <a href="http://ant.apache.org/">Jakarta ANT</a>. You must change 
+	to the ./bin directory in your Damon installation directory and execute the 
+	following command:</font></p>
+<blockquote>
+<p style="text-align: justify"><font size="2"><b>ant</b></font></p>
+</blockquote>
+<p style="text-align: justify"><font size="2">The next step is to edit the <b>damon-config.xml</b> 
+		file located at the ./bin directory, and change the parameters 
+	concerning bootstrap host, port, aspect framework to use, etc.</font></p>
+<p> </p>
+<h3><span style="background-repeat: repeat"><font size="2">Running the 
+	sample applications</font></span></h3>
+<p><font size="2">There is a binary precompiled <b>damon.jar</b> file 
+	contained in the ./lib directory which you should include in the 
+	applications willing to use Damon.</font></p>
+<p><font size="2">Damon contains several sample applications which 
+	demonstrate and test all of the functionalities in the middleware.</font></p>
+<p><span lang="es"><font size="2">The instructions for running the different 
+	included samples are as follows:</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>Direct abstraction sample </b><i>(damon.tutorial.direct)</i></font></span><p>
+<span lang="es"><font size="2">This sample includes a simple sample. It 
+		demonstrates the activation using direct abstraction.</font></span></p>
+<p><span lang="es"><font size="2">1) Open a shell and run the host.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.direct.SimpleHost</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">2) Open a shell and run the deployer.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.direct.SimpleDeployer</b></font></span></li>
+</ul>
+<p> </p></li>
+</ul>
+<ul>
+<li><span lang="es"><font size="2"><b>Distributed Meta-Aspect sample</b>
+<i>(damon.tutorial.metapointcut)</i></font></span><p><span lang="es">
+<font size="2">This sample includes a distributed meta-aspect over the simple sample. It 
+		tests the before, after, and around distributed meta-pointcuts.</font></span></p>
+<p><span lang="es"><font size="2">1) Open a shell and run the host.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.metapointcut.SimpleHost</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">2) Open a shell and run the deployer.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.metapointcut.SimpleDeployer</b></font></span></li>
+</ul></li>
+</ul>
+<p> </p>
+<ul>
+<li><span lang="es"><font size="2"><b>XML sample</b> <i>(damon.tutorial.xml)</i></font></span><p>
+<span lang="es"><font size="2">This sample includes a simple sample. It demonstrates the use of 
+		xml descriptor instead of annotations.</font></span></p>
+<p><span lang="es"><font size="2">1) Open a set of shells and run the host.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.xml.simple.SimpleHost</b></font></span></li>
+</ul>
+<p><span lang="es"><font size="2">2) Open a shell and run the deployer.</font></span></p>
+<ul>
+<li><span lang="es"><font size="2"><b>run 
+		damon.tutorial.xml.simple.SimpleDeployer</b></font></span></li>
+</ul>
+<p> </p></li>
+</ul>
+<p> </p>
+<p> </p>
+</div>
+<div class="app">
+<h3><span style="background-repeat: repeat"><font size="2"><a name="devel">
+	Developer's guide</a></font></span></h3>
+<p><font size="2">If you wish to code your aspects taking advantage of Damon 
+	services, you should follow these simple steps:</font></p>
+<ul>
+<li><font size="2">Add the corresponding annotation to aspect's classes :</font></li>
+</ul>
+<blockquote>
+<blockquote><b><font face="Courier New" size="2">import damon.annotation.*;</font></b><p> </p>
+<p><span style="background-color: #00FFFF"><b>
+<font face="Courier New" size="2">@DistributedAspect (abstraction = 
+		Abstractions.MULTI, target = "p2p://chat.urv.cat")</font></b></span><font size="2"><span style="background-color: #00FFFF"><br/>
+</span></font><font face="Courier New" size="2"><b>public class</b> DamonAspect {</font></p>
+<blockquote>
+<p><i><font color="#008080" face="Courier New" size="2">@SourceHook(source 
+			= "damon.samples.</font></i><font color="#008080" face="Courier New" size="2"><i>multihost</i></font><i><font color="#008080" face="Courier New" size="2">.</font></i><font color="#008080" face="Courier New" size="2"><i>log</i></font><i><font color="#008080" face="Courier New" size="2">.SourceHooks", 
+			method = "preloadedCheck")</font></i><font face="Courier New" size="2"><font color="#008080"><i><br/>
+</i></font><b>public Object</b> aroundTask(JoinPoint joinPoint) <b>throws</b> Throwable {<br/>
+</font><font size="2"><br/></font><font face="Courier New" size="2">...</font></p>
+</blockquote>
+<p><font face="Courier New" size="2">}</font></p>
+</blockquote>
+<p><font size="2">Damon's <u>annotations</u> are explained in the next table :</font></p>
+<p><b><u><font size="2">Distributed Aspect and Activation</font></u></b></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table3" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@DistributedAspect</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<span lang="EN-GB"><font size="2">Class</font></span></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the kind of Damon distributed aspect 
+				properties and activation</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>a</i></font><i><span lang="EN-GB"><font size="2">bstraction </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Determinates the abstraction type. We can choose among local, direct, hopped, any, many or multi 
+				ones.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				num</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Only for many abstraction, where we can 
+				specify the number of involved hosts.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				target</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">peer-to-peer locator associated to specific host 
+				or group of host</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; " width="323">
+<i><span lang="EN-GB"><font size="2">@DamonRequirement</font></span></i></td>
+<td style="border-style: solid; border-width: 1px; ; text-align:center; vertical-align:middle" width="127">
+<span lang="EN-GB"><font size="2">Method</font></span></td>
+<td style="border-style:solid; border-width:1px; text-align:justify">
+<span lang="EN-GB"><font size="2">Only in any/many abstraction, this 
+			annotation can mark methods that return boolean values. When we 
+			activate an aspect with requirements, the container uses them to 
+			determinate if the host is successful to install it.</font></span></td>
+</tr>
+</table>
+<p> </p>
+<ul>
+<li><span lang="es"><font size="2">In any/many abstraction, we 
+		can add a set of requirements to select the host to intercept using the 
+		DamonRequirement annotation:</font></span></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote><b><font face="Courier New" size="2">import damon.annotation.*;</font></b><p> </p>
+<p><i><font color="#008080"><b>
+<font face="Courier New" size="2">@DistributedAspect 
+		(abstraction = Abstractions.ANY, target = "p2p://calc.urv.cat")</font></b><font face="Courier New" size="2"><span style="background-color: #00FFFF"><br/>
+</span></font></font></i><font face="Courier New" size="2">
+<b>public class</b> DamonAspect {</font></p>
+<blockquote>
+<p><i><font color="#008080"><b>
+<font face="Courier New" size="2">
+<span style="background-color: #00FFFF">@DamonRequirement</span></font></b><font face="Courier New" size="2"><span style="background-color: #00FFFF"><br/>
+</span></font></font></i>
+<font face="Courier New" size="2"><b>public boolean</b> 
+		checkHasFreeResources() {</font></p>
+<p><font face="Courier New" size="2">...</font></p>
+</blockquote>
+<p><font face="Courier New" size="2">}</font></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><u><font size="2"><b>Source Hook</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table14" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@SourceHook</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the source hook local interception</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				source</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				pointcut definition class</font></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				method</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				local advice method</font></p></td>
+</tr>
+</table>
+<p class="MsoNormal" style="text-indent: 0cm"> </p>
+<p><u><font size="2"><b>Remote Pointcut</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table9" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemotePointcut </font></span>
+</i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the remote pointcut properties and 
+				propagation</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				remote pointcut unique identifier</font></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>a</i></font><i><span lang="EN-GB"><font size="2">bstraction </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Determinates the abstraction type. We can choose 
+				among local, direct, hopped, any, many or multi ones.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				num</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Only for many abstraction, where we can specify 
+				the number of involved hosts.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				target</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">peer-to-peer locator associated to specific host 
+				or group of host</font></span></p></td>
+</tr>
+</table>
+<p> </p>
+<p><u><font size="2"><b>Remote Advice</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table10" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemoteAdvice</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the remote advice subscription</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				subscribed remote pointcut unique identifier </font></p></td>
+</tr>
+</table>
+<p> </p>
+<p><u><font size="2"><b>Remote Invocation</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table11" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemoteInvocation</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the remote invocation properties and 
+				propagation</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				remote invocation unique identifier</font></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>a</i></font><i><span lang="EN-GB"><font size="2">bstraction </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Determinates the abstraction type. We can choose among local, direct, hopped, any, many or multi 
+				ones.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				num</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Only for many abstraction, where we can 
+				specify the number of involved hosts.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				target</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">peer-to-peer locator associated to specific host 
+				or group of host</font></span></p></td>
+</tr>
+</table>
+<p> </p>
+<p><u><font size="2"><b>Remote Method</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table12" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemoteMethod</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the remote method subscription</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				subscribed remote invocation unique identifier</font></p></td>
+</tr>
+</table>
+</blockquote>
+<ul>
+<li><span lang="es"><font size="2">To use the aspect remoting services your 
+		distributed aspect 
+		must extend from AspectRemoting. Moreover, to start the invocations you can use the
+		<i>invoke</i> parent primitive.</font></span></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><font face="Courier New" size="2"><b><i>
+<font color="#008080">@DistributedAspect (abstraction = 
+				Abstractions.MULTI, target = "p2p://clockstation.urv.cat")<br/>
+</font></i>public class</b> SynchroImpl <b>extends</b>
+<span style="background-color: #00FFFF">AspectRemoting</span> 
+				{</font></p>
+<blockquote>
+<p style="margin-top: 0em; margin-bottom: 0em">
+<font face="Courier New" size="2"><b>private</b> 
+					Hashtable&lt;String,Long&gt; times = <b>new</b> 
+					Hashtable&lt;String,Long&gt;();<br/><br/>
+<span style="background-color: #00FFFF">@RemoteAdvice (id = "time")</span><br/>
+<b>public void</b> 
+					valueArrived(RemoteJoinPoint rjp, Long value) {<br/>    times.put(id,vale);
+					<br/>}<br/><br/><span style="background-color: #00FFFF">@RemotePointcut (id = 
+					"time", abstraction = Abstractions.MULTI)</span></font></p>
+<p style="margin-top: 0em; margin-bottom: 0em">
+<font face="Courier New" size="2">
+<span style="background-color: #00FFFF">@SourceHook(source = 
+					"damon.samples.invokation.synchro.SourceHooks", method = "getTime")</span><br/>
+<b>public Object</b> aroundTask(JoinPoint joinPoint) <b>throws</b> Throwable {</font></p>
+<p><font face="Courier New" size="2"><br/>    
+					<b>long</b> time = ((Long) joinPoint.proceed()).longValue();<br/>    
+					<span style="background-color: #00FFFF">invoke(<b>Abstractions.MULTI, new</b> 
+					Long(time));</span><br/>    Collection&lt;Long&gt; c = 
+					<b>new</b> Vector&lt;Long&gt;(times.values());<br/>    long avg = 0;<br/>    
+					<b>for</b>(Long l : c) {<br/>        avg+= l;<br/>    }<br/>    
+					<b>if</b> (c.isEmpty()) <b>return</b> time; <br/>    
+					<b>else</b> { <br/>        avg = avg/(c.size());<br/>        
+					<b>return</b> <b>new</b> Long(avg);<br/>    } 
+					<br/>}</font></p>
+</blockquote>
+<p><font face="Courier New" size="2">}</font></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><span lang="es"><font size="2">Furthermore, to use the other services, 
+		like reflection layer or persistence system, you must call the <i>
+		thisEndPoint</i> static object methods.</font></span></li>
+</ul>
+<ul>
+<li><span lang="es"><font size="2">The alternative, in order to allow 
+		composition in runtime, is the use of equivalent XML descriptors. As 
+		follow we present an esqueletor :</font></span></li>
+</ul>
+<blockquote>
+<p style="margin-top: 0em; margin-bottom: 0em"><span lang="es"><font size="2">&lt;distributed-aspect&gt;<br/>
+          &lt;name&gt; &lt;/name&gt;<br/>
+          &lt;abstration&gt; &lt;/abstraction&gt;<br/>
+          &lt;target&gt; &lt;/target&gt;<br/>
+          &lt;state&gt; &lt;/state&gt;<br/>
+          &lt;offered&gt;<br/>
+                    
+		&lt;name&gt; &lt;/name&gt;<br/>
+                    
+		&lt;type&gt;remote-pointcut&lt;/type&gt;</font></span></p>
+<p style="margin-top: 0em; margin-bottom: 0em"><span lang="es">
+<font size="2">                    
+		&lt;sourcehook&gt;remote-pointcut</font></span></p>
+<p style="margin-top: 0em; margin-bottom: 0em"><span lang="es"><font size="2">                          &lt;source&gt;&lt;/source&gt;                    </font></span></p>
+<p style="margin-top: 0em; margin-bottom: 0em"><span lang="es"><font size="2">     
+                    
+		&lt;method&gt;&lt;/method&gt;                    </font></span></p>
+<p style="margin-top: 0em; margin-bottom: 0em"><span lang="es">
+<font size="2">                    &lt;/sourcehook&gt;<br/>
+                    
+		&lt;id&gt; &lt;/id&gt;<br/>
+                    
+		&lt;abstraction&gt; &lt;/abstraction&gt;<br/>
+          &lt;/offered&gt;<br/>
+          &lt;offered&gt;<br/>
+                    
+		&lt;name&gt; &lt;/name&gt;<br/>
+                    
+		&lt;type&gt;remote-invocation&lt;/type&gt;<br/>
+                    
+		&lt;id&gt; &lt;/id&gt;<br/>
+                    
+		&lt;abstraction&gt; &lt;/abstraction&gt;<br/>
+          &lt;/offered&gt;<br/>
+          &lt;required&gt;<br/>
+                    
+		&lt;name&gt; &lt;/name&gt;<br/>
+                    
+		&lt;type&gt;remote-method&lt;/type&gt;<br/>
+                    
+		&lt;id&gt; &lt;/id&gt;<br/>
+          &lt;/required&gt;<br/>
+          &lt;required&gt;<br/>
+                    
+		&lt;name&gt; &lt;/name&gt;<br/>
+                    
+		&lt;type&gt;remote-advice&lt;/type&gt;<br/>
+                    
+		&lt;id&gt; &lt;/id&gt;<br/>
+          &lt;/required&gt;<br/>
+          &lt;meta-pointcut&gt;<br/>
+                    
+		&lt;name&gt; &lt;/name&gt;<br/>
+                    
+		&lt;time&gt; &lt;/time&gt;<br/>
+                    
+		&lt;target&gt; &lt;/target&gt;<br/>
+                    
+		&lt;id&gt; &lt;/id&gt; <br/>
+          &lt;/meta-pointcut&gt;<br/>
+		&lt;/distributed-aspect&gt;</font></span></p>
+</blockquote>
+<p> </p>
+<p><u><font size="2"><b>Remote Meta-Pointcut</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table15" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemoteMetaPointcut </font></span>
+</i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the distributed meta-pointcut hook</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				subscribed remote pointcut unique identifier</font></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				type</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">The 
+				moment of the interception : Before, After or Around</font><span lang="EN-GB"><font size="2">.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				target</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">peer-to-peer locator associated to specific host 
+				or group of host</font></span></p></td>
+</tr>
+</table>
+<p><u><font size="2"><b>Remote Meta-Advice</b></font></u></p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table16" style="border-style: solid" width="92%">
+<tr>
+<td height="23" style="border-style:solid; border-width:1px; " width="323">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Annotation / Variable</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; " width="127">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Type</font></span></b></p></td>
+<td height="23" style="border-style:solid; border-width:1px; ">
+<p style="text-align: center">
+<b><span lang="EN-GB"><font size="2">Definition</font></span></b></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><i>
+<span lang="EN-GB"><font size="2">@RemoteMetaAdvice</font></span></i></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Method</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Defines the remote invocation properties and 
+				propagation</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				id</i></font><i><span lang="EN-GB"><font size="2"> </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2">
+				remote invocation unique identifier</font></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>a</i></font><i><span lang="EN-GB"><font size="2">bstraction </font></span></i>
+</p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Determinates the abstraction type. We can choose among local, direct, hopped, any, many or multi 
+				ones.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				num</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">Only for many abstraction, where we can 
+				specify the number of involved hosts.</font></span></p></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:1px; width:315px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><font size="2"><i>
+				target</i></font></p></td>
+<td style="border-style:solid; border-width:1px; width:119px;text-align:center; vertical-align:middle; padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm" valign="top">
+<font size="2">Value</font></td>
+<td style="border-style:solid; border-width:1px; width: 865px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; text-align:justify" valign="top">
+<p class="MsoNormal" style="text-indent:0cm"><span lang="EN-GB">
+<font size="2">peer-to-peer locator associated to specific host 
+				or group of host</font></span></p></td>
+</tr>
+</table>
+<p> </p><hr/>
+<p></p>
+<h3><span style="background-repeat: repeat"><font size="2">HOW TO USE Damon WITH OTHER Dynamic AOP Frameworks?
+</font></span></h3>
+<p style="text-align: justify"><font size="2">An aspect framework adaptation 
+	layer has been created in Damon, so as it can be easily adapted to different 
+	dynamic AOP frameworks. In our case, we have implemented Damon over AspectWerkz 2.0. In order to make Damon compatible with another runtime 
+	aspect engine, you must implement a series of classes, which are detailed as 
+	follows, showing Aspectwerkz's example:</font></p>
+<p> </p>
+<table bgcolor="#DDDDDD" border="1" bordercolor="#6666CC" id="table3" style="border-style: solid" width="92%">
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189"><b><font size="2">
+			Package</font></b></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="363">
+<b><font size="2">Class</font></b></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-bottom-style: solid; border-bottom-width: 1px">
+<font size="2"><b>Details</b></font></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189">
+<font size="2">damon.aspectwerkz</font></td>
+<td style="border-style: solid; border-width: 1px" width="363">
+<font size="2">HotDeployment</font><p><font size="2">DocumentCreator</font></p>
+<p><font size="2">AnnotationSwapper</font></p></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px">
+<font size="2">org.codehaus.aspectwerkz.transform.inlining.deployer.Deployer;</font><p>
+<font size="2">org.codehaus.aspectwerkz.transform.inlining.deployer.DeploymentHandler;</font></p>
+<p><span lang="ES"><font size="2">
+			org.codehaus.aspectwerkz.annotation.*;</font></span></p></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189">
+<font size="2">damon.invokation.aspectwerkz</font></td>
+<td style="border-style: solid; border-width: 1px" width="363">
+<font size="2">AspectInvokeObserver</font><p><font size="2">
+			AspectRemoting</font></p></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px">
+<font size="2">org.codehaus.aspectwerkz.definition.Pointcut;<br/>
+			org.codehaus.aspectwerkz.joinpoint.JoinPoint;</font></td>
+</tr>
+<tr>
+<td style="border-right-style: solid; border-right-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" width="189">
+<font size="2">damon.metaaspect.aspectwerkz</font></td>
+<td style="border-style: solid; border-width: 1px" width="363">
+<font size="2">DistributedMetaAspect</font><p><font size="2">
+			MetaPointcutObserver</font></p></td>
+<td style="border-left-style: solid; border-left-width: 1px; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px">
+<font size="2">org.codehaus.aspectwerkz.definition.Pointcut;<br/>
+			org.codehaus.aspectwerkz.joinpoint.JoinPoint;</font></td>
+</tr>
+</table>
+<p> </p>
+<p style="text-align: justify"><font size="2">Finally, the package names must follow the same template. 
+	For example, in our case we wanted to support Damon on top of Aspectwerkz, 
+	we would implement the classes in packages as for example: <b>damon.aspectwerkz </b>or<b> damon.messaging.aspectwerkz</b>.</font></p>
+<p style="text-align: justify"><font size="2">In order to use Damon with other dynamic aspect framework, 
+	you must specify the package name (<b>aspectwerkz</b> in our case) in the 
+	different configuration files we are using. For instance, <b>damon-config.xml</b>: 
+	change the line <b><i>"&lt;entry key="damon.aspect.engine"&gt;<span style="background-color: #00FFFF">aspectwerkz</span>&lt;/entry&gt;"</i></b>. 
+	For example, messaging system needs to load (i.e. by a aop.xml file) the 
+	damon.messaging.<b>aspectwerkz</b>.AspectObserver that extends 
+	damon.messaging.<b>aspectwerkz</b>.AspectCommunicator. Note that <b>run.bat</b> batch file also will be changed to initiate another 
+	aspect framework.</font><p> </p></p></div>
+</div>
+</td>
+</tr>
+<tr><td> </td></tr>
+</table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="4" cellspacing="0" id="table2" style="width: 184%;">
+<tbody><tr>
+<td>
+<!-- Begin Google Analytics code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-822924-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!-- End Google Analytics code -->
+<p>
+<font size="2">© 2008 Ruben Mondejar <a href="mailto:ruben.mondejar@urv.net">&lt;ruben.mondejar@urv.cat</a>&gt;</font></p></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div></div></td></tr></tbody></table></body>
+<!-- Mirrored from planet.urv.es/damon/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:09:46 GMT -->
+</html>

@@ -1,0 +1,636 @@
+<html>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<title>
+		Dermi: Decentralized Event Remote Method Invocation - Welcome
+	</title>
+	<style type="text/css">
+		@import url("style/tigris.css");
+		@import url("style/maven.css");
+	</style>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="text/html; charset=UTF-8">
+	<meta name="revisit-after" content="15 days">
+	<meta charset="UTF-8">
+	<meta>
+</head>
+
+<body class="composite">
+	<div id="banner">
+		<table border="0" width="100%" cellpadding="8" cellspacing="0">
+			<tr>
+				<td>
+					<img border="0" src="images/dermilogo.jpg" width="132" height="123"><a href="index-2.html"><span
+							style="text-decoration: none"></span></a>
+					<span style="text-decoration: none">&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="index-3.html">
+							<span style="font-weight: 700">D</span><span
+								style="text-decoration: none; font-weight: 700">ecentralized
+							</span><span style="font-weight: 700">E</span><span
+								style="text-decoration: none; font-weight: 700">vent
+							</span><span style="font-weight: 700">R</span><span
+								style="text-decoration: none; font-weight: 700">emote
+							</span><span style="font-weight: 700">M</span><span
+								style="text-decoration: none; font-weight: 700">ethod
+							</span><span style="font-weight: 700">I</span><span
+								style="text-decoration: none; font-weight: 700">nvocation</span></a></span>
+				</td>
+				<td>
+					<div id="login" align="right">
+						<p><a href="../index.html">
+								<img border="0" src="images/logoplanet.jpg" width="112" height="119"></a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="breadcrumbs">
+		<table border="0" width="98%" cellpadding="4" cellspacing="0">
+			<tr>
+				<td width="285">
+					<font size="2">Last Updated: 10 May 2006</font>
+				</td>
+				<td>
+					<div align="right">
+						<font size="2">
+							<a href="../index.html"><img class="handle" src="images/none.png" alt="">PLANET Project
+								Page</a>
+							|
+							<a href="http://www.etse.urv.es/recerca/ast/"><img class="handle" src="images/none.png"
+									alt=""></a><a href="http://www.etse.urv.es/recerca/ast/">AST
+								Research Group</a>
+							|
+							<a href="../bunshin/index.html">Bunshin</a>
+							|
+							<a href="../ERMI/index.html">ERMI</a>
+							|
+							<a href="../CBUS/index.html"><img class="handle" src="images/none.png" alt="">CBUS</a>
+						</font>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table border="0" width="100%" cellpadding="8" cellspacing="0">
+		<tr valign="top">
+			<td width="126" id="leftcol">
+				<div id="navcolumn">
+					<div>
+						<strong>Dermi</strong>
+						<div>
+							<small>
+								<a href="#What_is_Dermi">
+									<b><img class="handle" src="images/none.png" alt=""></b>Overview</a>
+							</small>
+						</div>
+						<div>
+							<small><a href="#Dermi_Architecture">
+									<img class="handle" src="images/none.png" alt="">Architecture</a> </small>
+						</div>
+						<div>
+							<a href="#Downloads"><img class="handle" src="images/none.png" alt="">Downloads</a><small>
+							</small>
+						</div>
+						<div>
+							<small>
+								<a href="#Authors"><img class="handle" src="images/none.png" alt="">Authors</a>
+							</small>
+						</div>
+						<div>
+							<small>
+								<a href="#Publications_"><img class="handle" src="images/none.png"
+										alt="">Publications</a>
+							</small>
+						</div>
+					</div>
+					<br>
+					<div>
+						<strong>Documentation</strong>
+						<div>
+							<small>
+								<a href="api/index.html"><img class="handle" src="images/none.png" alt="">Javadoc
+									(API)</a></small>
+						</div>
+						<div>
+							<small>
+								<a href="docs.html"><img class="handle" src="images/none.png" alt="">Installation
+									guide</a>
+							</small>
+						</div>
+						<div>
+							<small>
+								<a href="docs.html#devel"><img class="handle" src="images/none.png" alt="">Developer's
+									guide</a></small><br>&nbsp;
+						</div>
+					</div>
+					<div>
+						<strong>Applications</strong>
+						<div>
+							<small>
+								<a href="tags/apache-tags.html"><img class="handle" src="images/none.png" alt=""></a><a
+									href="#CoopWork">CoopWork</a>
+							</small>
+						</div>
+					</div>
+				</div>
+			</td>
+			<td rowspan="3">
+				<div id="bodycol">
+					<div class="app">
+						<div class="h3">
+							<h3>
+								<font size="2">News</font>
+							</h3>
+							<ul>
+								<li>
+									<font size="2"><b>16/05/2006 - Dermi v1.6 is available.</b></font>
+								</li>
+								<li>
+									<font size="2">15/11/2005 - Dermi v1.5 is available.</font>
+								</li>
+								<li>
+									<font size="2">22/06/2005 - Dermi v1.4 is available.</font>
+								</li>
+								<li>
+									<font size="2">07/02/2005 - Dermi v1.2 final release
+										unleashed!</font>
+								</li>
+								<li>
+									<font size="2">11/08/2004 - <a href="#Downloads">Dermi
+											v1.2Alpha 2</a> released. This is a bugfix release.</font>
+								</li>
+								<li>
+									<font size="2">11/08/2004 - Added <i>News</i><b> </b>section.</font>
+								</li>
+							</ul>
+							<h3>
+								<font size="2"><a name="What_is_Dermi">What is Dermi?</a> </font>
+							</h3>
+							<p>
+
+
+								<font size="2">Dermi (<u>D</u>ecentralized <u>E</u>vent <u>R</u>emote
+									<u>M</u>ethod
+									<u>I</u>nvocation) is a peer-to-peer (P2P), decentralized event-based
+									object middleware framework built on top of a structured
+									Distributed Hash Table (<a href="http://freepastry.rice.edu/">FreePastry</a>)
+									based overlay network. Based on an event-notification service
+									that is the principal building block (<a
+										href="http://freepastry.rice.edu/SCRIBE/default.htm">Scribe</a>),
+									Dermi makes three innovative contributions: P2P call
+									abstractions, a distributed interception mechanism, and a
+									decentralized object-location service.
+								</font>
+							</p>
+							<ul>
+								<li>
+									<font size="2"><b>Peer-to-peer call abstractions</b> include one-to-one
+										calls, and one-to-many calls, which can be either synchronous or
+										asynchronous in nature.</font>
+									<p>
+										<font size="2"><i>One-to-one calls</i>
+											do not use the event service, which fits more effectively in one-to-many
+											calls. This kind of calls involve only two entities: an object
+											client (stub) that sends a message directly to an object server (skeleton).
+										</font>
+									</p>
+									<p>
+										<font size="2"><i>One-to-many calls</i>, use the application-level
+											multicast layer to send notifications. There exist several kinds of
+											one-to-many calls.</font>
+									</p>
+									<ul>
+										<li>
+											<font size="2"><b>Multicall</b> is a remote invocation from
+												one client to many servers (or viceversa). As client/server
+												numbers increase, this approach scales better than having point-to-point
+												connections to any interested client.</font>
+										</li>
+										<li>
+											<font size="2"><b>Anycall </b>is a new form of remote
+												procedure call that benefits from network locality. We take
+												advantage of
+												<a href="http://freepastry.rice.edu/SCRIBE/default.htm">Scribe</a>'s
+												efficient <i>anycast</i> primitive to create a call to the
+												objects that belong to the same multicast group (object replicas
+												that can provide us with a service, for example). The anycall
+												client is insensitive to which group object provides data; it
+												only wants its request to be served.
+											</font>
+										</li>
+										<li>
+											<font size="2"><b>Manycall </b>is a variation of the anycall
+												abstraction. It sends a manycast message to several group
+												members, continuing to route until it finds enough members to
+												satisfy a global condition.</font>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<font size="2"><b>Distributed interception </b>lets us apply
+										connection-oriented programming concepts in a distributed setting.
+										With this service we can reconnect and locate type-compatible
+										interceptors at runtime in a distributed application. We extended
+										Scribe's classes to natively support this feature.</font>
+								</li>
+								<li>
+									<font size="2"><b>Decentralized object location</b>. We use the
+										P2P overlay network substrate DHT facilities to build our object
+										location service. It stores object-location information that can be
+										used to find objects via human-readable names. </font>
+								</li>
+							</ul>
+							<p>
+
+
+								<font size="2">Dermi is the decentralized version of
+									<a href="http://ants.etse.urv.es/ERMI">ERMI</a>, and it benefits
+									from the advantages of the structured P2P network it is built on
+									top of to provide many additional services, like the already
+									commented anycall and manycall abstractions, efficient direct
+									P2P calls, and a native distributed interception facility.
+								</font>
+							</p>
+							<p>
+
+
+								&nbsp;</p>
+
+
+							<h3>
+								<font size="2"><a name="Dermi_Architecture">Dermi Architecture</a></font>
+							</h3>
+
+
+							<p>
+								<font size="2">Dermi is built on top of a decentralized key-based
+									routing (KBR) P2P overlay network. It benefits from the underlying
+									services provided by the P2P layer, including group multicast and
+									anycast (CAST), the DHT abstraction, and a decentralized object location
+									and routing layer (DOLR). Moreover, Dermi uses the
+									<a href="../bunshin/index.html">Bunshin</a> object
+									replication and caching system. Our system models method calls as events
+									and subscriptions using the API provided by the CAST abstraction (which
+									models a wide-area event service). A diagram can be seen just below.
+								</font>
+							</p>
+							<p>&nbsp;</p>
+							<p style="text-align: center">
+								<img border="0" src="images/dermi_archit.jpg" width="472" height="337">
+							</p>
+							<p>&nbsp;<br /></p>
+							<h3><span style="background-repeat: repeat">
+									<font size="2">
+										<a name="Downloads">Downloads</a>
+									</font>
+								</span></h3>
+							<p>
+								<font size="2"><b>Decentralized Event Remote Method Invocation (Dermi)</b>.</font>
+							</p>
+							<blockquote>
+								<p>
+									<font size="2"><i>Distribution</i>: Source and binary code,
+										written and compiled in Java v1.5.0 RC. <i>License</i>: Dermi is
+										available under a <a href="http://www.gnu.org/copyleft/lesser.html">
+											LGPL</a>-like license.</font>
+								</p>
+								<ul>
+									<li>
+										<font size="2"><b>May 10, 2006. Release 1.6. [Java
+												1.5 required]</b></font>
+										<ul>
+											<li>
+												<font size="2"><u>Release Notes</u>: Migration to Bunshin
+													2.2.4 and FreePastry 1.4.4.
+													More bug fixes.</font>
+											</li>
+											<li>
+												<font size="2"><b><u>Download</u></b>:
+													<a href="dermi_1_6.zip">dermi_1_6.zip</a> [source + binaries]
+												</font>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<font size="2"><b>November 15, 2005. Release 1.5. [Java
+												1.5 required]</b></font>
+										<ul>
+											<li>
+												<font size="2"><u>Release Notes</u>: Migration to Bunshin
+													2.1.2 and FreePastry 1.4.2.</font>
+											</li>
+											<li>
+												<font size="2"><b><u>Download</u></b>:
+													<a href="dermi_1_5.zip">dermi_1_5.zip</a> [source + binaries]
+												</font>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<font size="2"><b>June 22, 2005. Release 1.4. [Java
+												1.5 required]</b></font>
+										<ul>
+											<li><u>
+													<font size="2">Release Notes</font>
+												</u>
+												<p>
+													<font size="2">
+														<a href="http://ants.etse.urv.es/p2pcm">p2pCM</a> is added to
+														the distribution.
+													</font>
+											</li>
+											<li>
+												<font size="2"><b>Download</b>:
+													<a href="dermi_1_4.zip">dermi_1_4.zip</a> [source +
+													binaries]
+												</font>
+											</li>
+										</ul>
+									<li>
+										<font size="2"><b>February 7, 2005. Release 1.2. [Java
+												1.5 required]</b></font>
+										<ul>
+											<li><u>
+													<font size="2">Release Notes</font>
+												</u>
+												<p>
+													<font size="2">
+														More bug fixes, and more samples added.</font>
+											</li>
+											<li>
+												<font size="2"><b>Download</b>:
+													<a href="dermi_1_2.zip">dermi_1_2.zip</a> [source +
+													binaries]
+												</font>
+											</li>
+										</ul>
+									<li>
+										<font size="2">July 30, 2004. Release 1.1. [Java 1.5
+											required]</font>
+										<ul>
+											<li>
+												<font size="2"><u>Release Notes</u></font>
+												<p>
+													<font size="2">This version
+														requires Java 1.5 runtime for execution and compilation.
+														<i>Dermic</i> tool has been eliminated, and stubs and skeletons
+														do not need to be generated in compilation time. Instead, the
+														<b>Dynamic Proxy</b> technique borrowed from Java 1.4 onwards
+														is applied so as remote object calls are intercepted in
+														runtime by a dynamic proxy and sent towards the network to the
+														destination object. Calls are then intercepted by a generic
+														skeleton.
+													</font>
+											</li>
+											</p>
+											<p>
+												<font size="2"><b>Java 1.5 annotation mechanism</b> is used to mark each
+													remote
+													procedure call with the desired invocation type tag
+													(Multicall, Directcall, Anycall, ...). Moreover, an adaptation
+													layer has been introduced, which provides Dermi's isolation
+													from the underlying DHT technology used. This means that the
+													transition from one DHT to another becomes an easy and
+													transparent process for applications built on top of Dermi.</font>
+												<li>
+													<font size="2"><b><u>Download</u></b>:
+														<a href="dermi_1_1.zip">dermi_1_1.zip</a> [source + binaries]
+													</font>
+												</li>
+										</ul>
+									<li>
+										<font size="2">May 09, 2004. Release 1.0. [Java 1.4
+											compatible]</font>
+										<ul>
+											<li>
+												<font size="2"><u>Release Notes</u>: This release
+													includes major refactoring of Dermi code, major bug fixing,
+													migration to FreePastry 1.3.2, thus including the
+													utilization of Scribe via the
+													<a href="http://www.pdos.lcs.mit.edu/papers/iptps:apis/main.pdf">Common
+														API</a>. Extensive tests and retransmission of lost
+													events are included.
+												</font>
+											</li>
+											<li>
+												<font size="2"><b><u>Download</u></b>:
+													<a href="dermi_1_0.zip">dermi_1_0.zip</a> [source + binaries]
+												</font>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<font size="2">July 30, 2003. Release 0.3 Beta. [Java 1.4
+											compatible]</font>
+										<ul>
+											<li>
+												<font size="2">Release Notes: Initial version of Dermi,
+													based on FreePastry 1.3. Includes all the features described
+													in the
+													<a
+														href="http://csdl.computer.org/comp/proceedings/icdcs/2004/2086/00/20860236abs.htm">
+														ICDCS 2004 paper</a>: P2P call abstractions (including
+													anycall and manycall), distributed interception, and a
+													sketch of the decentralized object location service.
+												</font>
+											</li>
+											<li>
+												<font size="2"><b><u>Download</u></b>:
+													<a href="http://ants.etse.urv.es/DERMI/DERMI.zip">
+														dermi_0_3.zip</a>&nbsp; [source + binaries]
+												</font>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</blockquote>
+							<p>
+								<font size="2"><b><a name="CoopWork">CoopWork</a></b></font>
+							</p>
+							<blockquote>
+								<p>
+									<font size="2">CoopWork is an <a href="http://www.eclipse.org/">
+											Eclipse</a> cooperative development plug-in, which has been
+										developed using Dermi. It benefits from Dermi's services, thus
+										providing a set of collaborative tools, including presence services,
+										a chat system, a list of currently modified resources, a log of
+										published versions in the group, and a notification system.
+										Additionally it provides code sharing tools.</font>
+								</p>
+								<p>
+									<font size="2"><i>Distribution</i>: Source and binary code,
+										written and compiled in Java v1.4.1.</font>
+								</p>
+								<ul>
+									<li>
+										<font size="2">Release 1.0.</font>
+										<ul>
+											<li>
+												<font size="2"><u>Release Notes</u>: Stable version.</font>
+											</li>
+											<li>
+												<font size="2"><u>Download</u>:
+													<a href="http://ants.etse.urv.es/DERMI/CoopWork_1.0.0.zip">
+														coopwork_1_0_0.zip</a> [source + binaries]
+												</font>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<p>&nbsp;</p>
+							</blockquote>
+							<h3><span style="background-repeat: repeat">
+									<font size="2">
+										<a name="Authors">Authors</a>
+									</font>
+								</span></h3>
+							<blockquote>
+								<p>
+									<font size="2"><b><a href="http://www.etse.urv.es/~cpairot">
+												Carles Pairot Gavaldà</a></b>, PhD student in the Department of
+										Computer Science and Mathematics at Universitat Rovira i Virgili in
+										Tarragona, Catalonia, Spain. Contact
+										<a href="mailto:cpairot@etse.urv.es">&lt;carles.pairot@urv.net</a>&gt;
+									</font>
+								</p>
+								<p>
+									<font size="2"><b><a href="http://www.etse.urv.es/~pgarcia">Pedro
+												García López</a></b>, full-time professor in the Department of
+										Computer Science and Mathematics at Universitat Rovira i Virgili in
+										Tarragona, Catalonia, Spain. Contact
+										<a href="mailto:pgarcia@etse.urv.es">&lt;pedro.garcia@urv.net</a>&gt;
+									</font>
+								</p>
+								<p>
+									<font size="2"><b>
+											<a href="http://ants.etse.urv.es/planet/rmondejar">Rubén Mondéjar
+												Andreu</a></b>, M. Sc. Computer
+										Science Student in the Department of Computer Science and
+										Mathematics at Universitat Rovira i Virgili in Tarragona, Catalonia,
+										Spain.</font>
+								</p>
+							</blockquote>
+							<p>&nbsp;</p>
+							<h3>
+								<font size="2"><a name="Publications_">Publications</a></font>
+							</h3>
+							<ul>
+								<li>
+									<font style="font-size: 9pt;" face="Verdana">Pairot, C., García,
+										P., Rallo, R., Blat, J., Gómez Skarmeta, A.F. <b>The Planet Project:
+											Collaborative Educational Content Repositories on Structured Peer-to-Peer
+											Grids</b>. Accepted for publication on Proceedings of the 5th ACM/IEEE
+										International Symposium on Cluster Computing and the Grid (CCGrid
+										2005). Second International Workshop on Collaborative and Learning
+										Applications of Grid Technology and Grid Education (CLAG + Grid.edu
+										2005). Cardiff, United Kingdom, May 2005.</font>
+								</li>
+								<li>
+									<font style="font-size: 9pt;" face="Verdana">Pairot, C., García,
+										P., Gómez Skarmeta, A.F., Mondéjar, R. <b>
+											<a
+												href="http://www.sciencedirect.com/science?_ob=ArticleURL&amp;_udi=B6V06-4DP2W1B-1&amp;_coverDate=01/01/2005&amp;_alid=239959687&amp;_rdoc=1&amp;_fmt=&amp;_orig=search&amp;_qd=1&amp;_cdi=5638&amp;_sort=d&amp;view=c&amp;_acct=C000053456&amp;_version=1&amp;_urlVersion=0&amp;_userid=1517337&amp;md5=2450e8d5236c2ca445804">
+												Towards New Load-balancing Schemes for Structured Peer-to-Peer
+												Grids</a></b>.
+										<i>Future Generation Computer Systems - The International Journal of
+											Grid Computing: Theory, Methods and Applications</i>. Vol. 21,
+										January 2005, pp. 125-133. ISSN: 0167-739X.
+									</font>
+								</li>
+								<li>
+									<font size="2">Pairot, C., García, P., Mondéjar, R., Gómez
+										Skarmeta, A.F. <b>
+											<a
+												href="http://sensei.ieec.uned.es/cgi-bin/aepia/contenidoNum.pl?numero=24">Towards
+												a Peer-to-Peer Object Middleware for Wide-Area
+												Collaborative Application Development</a></b>. </font>
+									<font face="Verdana" size="2"><i>Revista Iberoamericana de
+											Inteligencia Artificial</i>. Vol. 8, No. 24, Winter 2004, pp. 55-65.
+										ISSN: 1137-3601.</font>
+								</li>
+								<li>
+									<font face="Verdana" size="2">Pairot, C., García, P., Gómez Skarmeta,
+										A.F., and Mondéjar, R., <b>
+											<a href="http://www.springerlink.com/index/5BLDX8BMR26ADFA3.pdf">Achieving
+												Load Balancing in
+												Structured Peer-to-Peer
+												Grids</a></b>. Lecture Notes
+										in Computer Science (LNCS)
+										Volume 3038. 4th
+										International Conference on
+										Computational Science (ICCS
+										2004). 1st International
+										Workshop on Active and
+										Programmable Grid
+										Architectures and Components
+										(APGAC 2004). Kraków, Poland.
+										June 2004, pp. 98-105.</font>
+								</li>
+								<li></li>
+								<font size="2">Pairot C., García P., Gómez Skarmeta, A.F. <b>
+										<a href="http://csdl.computer.org/comp/mags/ic/2004/03/w3074abs.htm">Dermi: A
+											Distributed Hash Table-based Middleware Framework</a></b>.
+									<i>IEEE Internet Computing</i>. Vol. 8, No. 3, May/June 2004, pp. 74
+									- 84.
+								</font>
+								</li>
+								<li>
+									<font size="2">Pairot, C., García, P., Gómez Skarmeta, A.F. <b>
+											<a
+												href="http://csdl.computer.org/comp/proceedings/icdcs/2004/2086/00/20860236abs.htm">DERMI:
+												A
+												Decentralized Peer-to-Peer Event-Based Object Middleware</a></b>.
+										Proceedings of the 24th IEEE International Conference on Distributed
+										Computing Systems (ICDCS 2004). Tokyo, Japan. March 2004, pp. 236 -
+										243.</font>
+								</li>
+								<li>
+									<font size="2">Pairot, C., García P., Gómez Skarmeta, A.F.,
+										Rallo, R., Mondéjar, R. <b>
+											<a href="http://www.rediris.es/rediris/boletin/66-67/ponencia12.pdf">DERMI:
+												Middleware para aplicaciones de trabajo en grupo
+												descentralizadas</a></b>. Jornadas Técnicas RedIRIS 2003, Palma de
+										Mallorca, Spain, November 2003.</br></font><br></br>
+								</li>
+							</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="126" id="leftcol">
+				&nbsp;</td>
+		</tr>
+	</table>
+	<div id="footer">
+		<table border="0" style="width:100%" cellpadding="4" cellspacing="0">
+			<tr>
+				<td>
+					<script language="JavaScript" src="http://m1.nedstatbasic.net/basic.js">
+					</script>
+					<script language_"JavaScript">
+
+					</script>
+					<noscript>
+						<a target=_blank" href="http://v1.nedstatbasic.net/stats?ACGYTQ5NdPkvs9a7Yx5Va/rFS+Tg"><img
+								src="http://m1.nedstatbasic.net/n?id=ACGYTQ5NdPkvs9a7Yx5Va/rFS+Tg" border="0" nosave
+								width="18"></a></H4></noscript>
+					<font size="2">© 2003-2006 Carles Pairot
+						<a href="mailto:%3Ccpairot@etse.urv.es">
+							&lt;carles.pairot@urv.net</a>&gt;
+					</font>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

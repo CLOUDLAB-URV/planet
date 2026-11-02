@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+<!-- Mirrored from planet.urv.es/move/resources/html/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:10:39 GMT -->
+<head><meta charset="utf-8"/>
+<meta content="text/html;CHARSET=utf-8" http-equiv="Content-Type"/>
+<meta content="Visual Page 1.1 for Windows" name="GENERATOR"/>
+<title>ANTS/MOVE Documentation</title>
+</head>
+<body bgcolor="#FFFFFF" link="#0164A8">
+<p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="18%"><img align="BOTTOM" border="0" height="53" src="images/cscw.jpg" width="140"/></td>
+<td width="67%">
+<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" height="46" width="100%">
+<tr>
+<td width="228">
+<h2 align="RIGHT"><a href="http://ants.etse.urv.es/"><tt>ants</tt></a><tt>/</tt><a href="../../index-2.html"><tt>move</tt></a><tt>/docs/ </tt>
+</h2></td>
+<td width="303"> </td>
+</tr>
+<tr>
+<td width="228"> </td>
+<td align="LEFT" valign="TOP" width="303">
+<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="LEFT" valign="TOP" width="295">
+<h3><tt>papers/ </tt><a href="../../docs/index.html"><tt>api</tt></a><tt>/ </tt><a href="move-help/index.html"><tt>user's manual</tt></a>
+</h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width="18%"><img align="BOTTOM" border="0" height="53" src="images/moveSmall.jpg" width="195"/></td>
+</tr>
+</table>
+ 
+<table border="0" valign="top" width="100%">
+<tr>
+<td valign="TOP" width="99%">
+<table bgcolor="#FFFFFF" border="0" valign="top" width="100%">
+<tr>
+<td bgcolor="#0164A8" width="100%"><font color="#FFFBF0"><b> CVE 2002 Final Paper</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%">This is the final paper presented by Carles Pairot on the ACM Collaborative Virtual Environments 2002 Conference. It was held on Bonn from September 30 to October 2, 2002.
+					<br/><br/><b><u>ABSTRACT</u></b><br/><br/>
+					"The design of a Virtual Environment (VE) is a distributed problem of multi-user access to shared resources. Such problem requires careful design decisions in order to provide a seamless system infrastructure capable of supporting flexible interactions in the shared scenarios.
+The complexity of this domain has led to intricate software systems that provide ad-hoc solutions to specific problems. Furthermore, many of them have gone to a dead end, due to their non-extensible design and their lack of code and module reuse.
+This paper presents a VE that is constructed on top of a component groupware framework. Our major aim is to provide an extensible infrastructure offering a set of collaborative services in a seamless way.  At the conceptual level, it provides essential collaborative services: shared sessions, support for synchronous and asynchronous components, security, coordination, and a server-side awareness infrastructure. At the architectural level, the framework is constructed on top of a middleware integration platform and uses high performance publish/subscribe notification services. Finally, we present the advantages and limitations of this approach".
+<br/>
+<br/>The rest of the paper is available in PDF Format <a href="p98-garcia.pdf">here</a>.<br/>
+<br/>The slides of the presentation can be found <a href="cve2002.pdf">here</a>.</td>
+</tr>
+</table>
+<br/>
+<table bgcolor="#FFFFFF" border="0" width="100%">
+<tr>
+<td bgcolor="#0164A8" width="100%"><font color="#FFFBF0"><b> End of Degree Project Final Paper</b></font></td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="100%">This is the final documentation of the End of Degree Project that we presented on June 25, 2002 at Universitat Rovira i Virgili. We graduated with honours and finally got the Honorous Degree in Computer Science.<br/>
+<br/>This documentation is only available in Catalan and it can be downloaded from <a href="pfc.pdf">here</a>.
+</td>
+</tr>
+</table>
+<!--<BR>
+			
+			<TABLE BORDER="0" WIDTH="100%" BGCOLOR="#FFFFFF">
+				<TR>
+					<TD WIDTH="100%" BGCOLOR="#0164A8"><FONT COLOR="#FFFBF0"><B>&nbsp;Installation Notes</B></FONT></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" BGCOLOR="#FFFFFF">The requirements for running MOVE! are as follows:
+<BR><BR><UL><LI><B>Netscape Navigator 4.5 or higher</B>. It DOES NOT work with Microsoft Internet Explorer.</LI><LI><B>Cosmo Player VRML Browser v2.1.</B> Other VRML Browsers may be supported.</LI><LI><B>Java2 SDK v1.2 or higher.</B></LI> <LI><B>Elvin4 or JSDT Notification Services</B></LI><LI><B>Web application server.</B> Orion Webserver recommended.</LI><LI><B>1024x768 display resolution. 24-bit color depth recommended.</B></LI><LI><B>3D Acceleration card recommended.</B></LI><LI><B>128MB. RAM recommended.</B></LI></UL>
+<BR><HR ALIGN="CENTER"><BR>
+The installation is very simple:<BR>
+				<UL>
+						<LI>If you have downloaded the <U><B>Orion Webserver MOVE! version</B></U>:
+						<UL>
+							<LI>Decompress '<B>move_x_y_z_t.jar</B>' to the directory you prefer: <BR><I><DL><DT>jar -xvf move_z_y_z_t.jar &lt;your-directory&gt;</DL></I>
+						</UL>
+						<BR><LI>If you have downloaded the <U><B>MOVE! Web-application version</B></U>:
+						<UL>
+							<LI>Copy '<B>move_x_y_z_t.ear</B>' to <I>&lt;your-web-server-application-directory&gt;</I>
+						<LI><B>Add/Remove users to MOVE!</B> They are mapped in two groups: Teachers and Students. For example, in Orion Webserver, you should add these lines to the file called <B>'principals.xml'</B> located in /orion/config directory:<BR><BR>
+<I>
+<DL>
+	<DT>&lt;groups&gt;
+		<DD>&lt;group name="teachers"&gt;<BR>
+			<DL>
+				<DD>&lt;description&gt;teachers&lt;/description&gt;<BR>
+			</DL>
+		<DD>&lt;/group&gt;<BR>
+		<DD>&lt;group name="students"&gt;<BR>
+			<DL>
+				<DD>&lt;description&gt;students&lt;/description&gt;<BR>
+			</DL>
+		<DD>&lt;/group&gt;<BR>
+	<DT>&lt;/groups&gt;<BR>
+<BR>
+	<DT>&lt;users&gt;<BR>
+		<DD>&lt;user username="user1" password="xxxxx" realname="user1"&gt;<BR>
+			<DL>
+				<DD>&lt;group-membership group="students"/&gt;<BR>
+			</DL>
+		<DD>&lt;/user&gt;<BR>
+		<DD>...<BR>
+	<DT>&lt;/users&gt;
+</DL>
+</I>
+<BR>						<LI><B>Add MOVE! web application to your web-server</B>. For example, in Orion Webserver, you should add this line to the file called <B>'server.xml'</B> located in /orion/config directory: <BR><BR>
+<I>
+<DL>
+	<DT>&lt;application name="move" path="../applications/move_x_y_z_t.ear"/&gt;<BR><BR>
+</DL>
+</I>
+And this line to <B>/orion/config/default-web-site.xml</B>:
+<I>
+<DL>
+	<DT><BR>&lt;web-app application="move" name="move" root="/move" /&gt;
+</DL>
+</I>
+<BR>
+						</UL>
+						<LI>Common in <U><B>BOTH VERSIONS</B></U>:
+						<UL>
+							<LI><B>Run ./scripts/hostChanger </B>and fill in the required fields</LI>
+							<LI><B>Launch the Web Server </B>(Orion, Apache, ...)</LI>
+							<LI><B>Launch Elvin4 or JSDT </B>(by running ./scripts/JSDTServer)</LI>
+						</UL>
+				</UL>
+				</TR>
+			</TABLE>
+<BR>
+			<TABLE BORDER="0" WIDTH="100%" BGCOLOR="#FFFFFF">
+				<TR>
+					<TD WIDTH="100%" BGCOLOR="#0164A8"><FONT COLOR="#FFFBF0"><B>&nbsp;Running MOVE!</B></FONT></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" BGCOLOR="#FFFFFF">
+<UL>
+						<LI>Make sure you have already run <B>./scripts/hostChanger</B></LI>
+						<LI><B>Launch the Web server</B> (if you have not done it yet)</LI>
+						<LI><B>Launch Elvin4 Notification service or JSDT</B> (by running ./scripts/JSDTServer)</LI>
+						<LI><B>Launch the RMI World Creator Object</B><BR>
+							&nbsp;&nbsp;./scripts/runServer</LI>
+						<LI><B>Launch the RMI Voter Machine object</B> (for every World that has it)<BR>
+							&nbsp;&nbsp;Example: ./worlds/move/VRClass/runVoterServer</LI>
+						<LI><B>Start Netscape Navigator and enter MOVE!</B><BR>
+							&nbsp;&nbsp;http://&lt;your-web-server-host&gt;/move<BR>
+							&nbsp;&nbsp;Example: http://127.0.0.1/move</LI>
+						<LI><B>Click on the 'access' link</B> and choose whether you want to create a new world (builder) or view an existing one (core)</LI>
+						<LI><B>Enter your login</B> (you can try 'teacher', password: nothing for Teacher access or 'student', password: nothing for Student access)</LI>
+						<LI><B>If there are no errors</B> on the Java Console, everything went OK and you are done.</LI>
+
+</TD>
+				</TR>
+			</TABLE>
+			<BR>
+			<B><U>NOTE for Elvin users</U>:</B> The file 'je-4.jar' in the jars directory must be replaced with the appropriate Elvin4 library matching your Elvin4 server version.<BR><BR>
+			<B><U>NOTE for JSDT users</U>:</B> Every time you log in to MOVE!, remember to change the 'java.naming.security.principal' field in the './worlds/connection.properties' file. Each MOVE! user must have a different 'java.naming.security.principal' field. It is basically its username. This is a very serious limitation of JSDT and its use is not recommended.
+</TD>
+	</TR> -->
+</td></tr></table>
+</p></body>
+<!-- Mirrored from planet.urv.es/move/resources/html/docs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:10:46 GMT -->
+</html>

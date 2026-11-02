@@ -1,0 +1,147 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<!-- Mirrored from planet.urv.es/planetdr/info/info9.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:17:35 GMT -->
+<head><meta charset="utf-8"/>
+<title>PLANET Digital Repository</title>
+<style type="text/css">
+      @import url("../style/tigris.css");
+      @import url("../style/maven.css");
+  </style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="composite" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+<tbody>
+<tr valign="top">
+<td id="leftcol" width="126">
+<div> <strong>Information</strong> <br/><br/>
+<div> <small> <a href="../body.html#news">News</a> </small> </div>
+<div> <small> <a href="info1.html">Educational Contents</a> </small> </div>
+<div> <small> <a href="info2.html">DRI</a> </small> </div>
+<div> <small> <a href="info3.html">ECL</a> </small> </div>
+<div> <small> <a href="info4.html">EduSource</a> </small> </div>
+<div> <small> <a href="info5.html">Authors</a> </small> </div>
+<div> <small> <a href="info6.html">Collaborators</a> </small></div>
+<div> <small> <a href="info7.html#download"> Download</a> </small> </div>
+<div> <small> <a href="info7.html#install">Installation</a> </small> </div>
+<div> <small> <strong>Site Administration</strong> </small> </div>
+<div> <small> <a href="info10.html">Registered Users</a> </small> </div>
+<div> <small> <a href="info11.html">Communities</a> </small> </div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3><font size="2">Site Administration</font></h3>
+<p><font size="2">This help is focused for the administrators of 
+		PlanetDR servers. This help you to understand the semantic of actions 
+		and what involves them. This page is divided in two parts: the first for 
+		the case when you just installed the server, and the second one for when 
+		the server is initialized and available for public use. In this page is 
+		suposed that you have login in as <b>Administrator </b>role.</font></p>
+<ul>
+<li><font size="2">When you have just started the PlanetDR you can see 
+		these menus: </font> <br/>
+<br/>
+<center><img alt="Administrator menu" border="1" height="113" src="../images/new_starting_administrator_mode.gif" width="130"/><br/>
+ </center>
+<ul>
+<li><font size="2"><b>Initialize database:</b> Inserts two registers 
+			into local database to update the location of different directories, 
+			included them in <b>planetdr</b> web application. This action must 
+			to be executed before to make public your PlanetDR server.</font></li>
+<li><font size="2"><b>List of new users:</b> The PlanetDR server permit to 
+			register of new users in moderate form. That is, when new users are 
+			registered to our PlanetDR server, the Administrator must to accept 
+			or deny their registration. In any case, an email is sended to 
+			inform of its result. Finally, if you come in this option, you can 
+			see all pending user registrations.</font></li>
+<li><font size="2"><b>List of registered users:</b> This option permits you 
+			to see all accepted users.</font></li>
+<li><font size="2"><b>Add content type:</b> Inserts new type of contents. 
+			This consist by an expression to permit to define a category of 
+			digital resources. This action must to be executed almost once 
+			before to make public your PlanetDR server.</font></li>
+<li><font size="2"><b>Remove content type:</b> Permit to remove existing 
+			content types.</font></li>
+<li><font size="2"><b>Change the login:</b> Permit to change your login. 
+			For example, for System to GrantBrother.</font></li>
+<li><font size="2"><b>Change the password: </b>Permit to change your 
+			password. This action is recomended before to make public your 
+			PlanetDR server, because ALL PlanetDR servers take the same one 
+			initially.</font></li>
+<li><font size="2"><b>LogOut:</b> Log out of your PlanetDR session.<br/>
+</font></li>
+</ul>
+<center><img alt="Federation menu" border="1" src="../images/new_federation_menu.gif"/></center>
+<ul>
+<li><font size="2"><b>Add server:</b> Manually adds a new ECL server 
+			information.  The ECL servers are compatible digital repository 
+			servers with the PlanetDR Federation. This operation updates either all
+			servers in PlannetDR Federation automatically and the local database
+			with new server.</font></li>
+<li><font size="2"><b>Remove server:</b> Manually removes an existing 
+			server. This action is only recommended when target server has disappeared
+			or just not offers the ECL or PlanetDR repository services.</font></li>
+<li><font size="2"><b>List all servers:</b> Makes a query to the 
+			PlanetDR Federation to request all up PlanetDR and ECL servers.</font></li>
+<li><font size="2"><b>Update servers list:</b> You can to force
+			a manual synchronization of PlanetDR Federation and local database servers list.
+ 			After this, you update the local database with new PlanetDR Federation servers
+			and you update the rest of PlanetDR Federation servers with your extra 
+			servers existing in your local database.</font></li>
+<li><font size="2"><b>Unregister local server:</b> When you decide 
+			to shutdown your PlanetDR, you must execute this option to inform 
+			PlanetDR Federation of your exit.</font></li>
+</ul>
+<br/>
+<font size="2">If you see the following menu, your PlanetDR server has not
+			started successfully. You can identify the error in the $TOMCAT_HOME/logs/catalina.out, in a line
+			with the term "federation service". You can report these detailed bugs to us by email
+			to <a href="mailto: jordi.pujol@estudiants.urv.es">Jordi Pujol</a>.<br/><br/></font>
+<center>
+<img alt="Federation menu" border="1" src="../images/starting_federation_mode.gif"/></center>
+</li>
+</ul>
+<h3><a name="reports"></a>How to report errors</h3><br/>
+	  Send an email to <a href="mailto: jordi.pujol@estudiants.urv.es">Jordi Pujol</a> with the
+	  following information, and we will contact you soon. 
+	  We already agree feedback with your comments, suggestions and questions.
+      <ul>
+<li> Version of PlanetDR installation.</li>
+<li> Version of installed Tomcat.</li>
+<li> Version of installed MySQL</li>
+<li> <strong>$TOMCAT_HOME/logs/catalina.out</strong> logs file (in zip or tar.gz archive).</li>
+<li> <strong>$TOMCAT_HOME/webapps/planetdr/WEB-INF/web.xml</strong> and <strong>dolr-config.xml</strong> (if exists).</li>
+<li> Detailed errors.</li>
+</ul>
+<strong>IMPORTANT:</strong> All this information must NOT be greater than 3MB.<br/>
+<p> </p></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="footer"> <br/>
+<br/>
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<p style="text-align: center">
+<font id="app" size="1">PlanetDR: Planet Digital Repository.<br/>
+		A Research Project from
+		<a alt="Universitat Rovira i Virgili" href="http://www.urv.net/">URV</a>.</font>
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/planetdr/info/info9.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:17:38 GMT -->
+</html>
+</html>

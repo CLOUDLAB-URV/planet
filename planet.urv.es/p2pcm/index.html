@@ -1,0 +1,302 @@
+<html>
+      
+<!-- Mirrored from planet.urv.es/p2pcm/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:01:15 GMT -->
+<head>
+          <title>
+            P2PCM : A Structured Peer-to-Peer Grid Component Model  - Welcome
+          </title>
+        <style type="text/css">
+          @import url("style/tigris.css");
+          @import url("style/maven.css");	
+        </style>        
+	
+		<meta charset="utf-8"> 
+			        
+      </head>
+      <body class="composite">
+        <div id="banner">
+          <table border="0" width="100%" cellpadding="8" cellspacing="0">
+            <tr>
+              <td style="text-align: center; vertical-align: middle" width="217">
+                  <img border="0" src="images/logo.jpg" width="163" height="202"></td>
+              <td style="text-align: center; vertical-align: bottom">
+                  <p style="text-align: center"><span style="text-decoration: none"><a href="index-2.html"></img></a></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span style="font-weight: 700; text-decoration:none">
+					<font size="4"><a href="index-3.html">P2PCM : A Structured 
+					Peer-to-Peer Grid Component Model </a> </font></span>
+                  </td>
+              <td width="222">
+                <div id="login" align="right">
+                    <p><a href="../index.html">
+                    <img border="0" src="images/logoplanet.jpg" width="150" height="142"></a></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="breadcrumbs">
+          <table border="0" width="98%" cellpadding="4" cellspacing="0">
+            <tr>
+                <td width="286"><font size="2">Last Updated: 10 May 2006</font></td>
+              <td>
+                <div align="right">
+      <font size="2"><a href="../index.html">
+		<img class="handle" src="images/none.png" alt="">PLANET 
+		Project Page</a> | <a href="www.etse.urv.es/recerca/ast/index.html">
+		<img class="handle" src="images/none.png" alt="">AST 
+		Research Group</a> | <a href="../DERMI/index.html">DERMI</a>
+		| <a href="../bunshin/index.html">Bunshin</a>
+		</font>&nbsp;<font size="2">&nbsp;
+		</font>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <table border="0" width="100%" cellpadding="8" cellspacing="0"> 
+          <tr valign="top">
+            <td width="126" id="leftcol">
+              <div id="navcolumn">
+    <div>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <strong>P2PCM</strong></p>
+		<p style="margin-top: 0; margin-bottom: 0"><small>
+		<a href="#Description"><font size="2"><img class="handle" src="images/none.png" alt=""></img>Description</font></a></small><font size="2"><br>
+  	  </font><small><font size="2"><a href="#Architecture"><img class="handle" src="images/none.png" alt=""></img>Architecture</a></font></small><font size="2"><br>
+	  </font>
+	  <small><a href="#Downloads"><font size="2"><img class="handle" src="images/none.png" alt=""></img>Downloads</font></a></small><font size="2"><br>
+	  </font>
+	  <small><a href="#Authors"><font size="2"><img class="handle" src="images/none.png" alt=""></img>Authors</font></a></small><font size="2"><br>
+      </font>
+      <small><a href="#Publications_"><font size="2"><img class="handle" src="images/none.png" alt=""></img>Publications</font></a></small></p>&nbsp;<p style="margin-top: 0; margin-bottom: 0">
+		<strong><font size="2">Documentation</font></strong></p>
+		<p style="margin-top: 0; margin-bottom: 0">
+      <small>
+      	<font size="2"><a href="api/index.html">
+		<img class="handle" src="images/none.png" alt="">Javadoc 
+		(API)</a></font></small></p>
+		<p style="margin-top: 0; margin-bottom: 0"><font size="2"><br>
+  	  &nbsp;</font></div>
+  </div>
+
+            </td>
+            <td rowspan="2">
+              <div id="bodycol">
+                <div class="app">
+    <div class="h3">
+        <h3>
+          <span style="background-repeat: repeat"><font size="2"><a name="News">
+			News</a></font></span></h3>
+		<blockquote>
+									<p><span lang="es"><font size="2"><b>Ma</b></font></span><b><font size="2"><span lang="es">y 
+									10</span>, 2005.
+									<span lang="es">p2pCM Next Releases</span></font> 
+									</b> 
+									<span lang="en-us"><font size="2">p2pCM has 
+									been included in
+									<a href="planet.urv.es/DERMI.html">DERMI 
+									distribution</a>.</font></span></p>
+			&nbsp;</p>
+		</blockquote>
+		<h3>
+          <font size="2"><a name="Description">Description</a></font></h3>
+		<blockquote>
+			<span lang="EN-US"><font size="2">A component is defined as a <i>
+			unit of software application composition with contractually 
+			specified interfaces and explicit context dependencies that can be 
+			developed, acquired, added to the system and composed of other 
+			independent components, in time and space</i>. Component interfaces 
+			determine the operations that a component implements, and the 
+			operations it uses from other components during its execution.</font></span></p>
+			<span lang="EN-US"><font size="2">A distributed component-oriented 
+			model is an architecture for defining components and their 
+			interactions. It must provide a packaging technology for deploying 
+			binary component executables. Moreover, it needs a container 
+			framework for injecting life cycle, thus permitting activation and 
+			passivation of component instances. Other services include security, 
+			transactions, persistence, events, and others.</font></span></p>
+			<span lang="EN-US"><font size="2">We have designed a new 
+			decentralized P2P grid component model which runs on top of an 
+			overlay network. We have implemented the majority of traditional 
+			component models services, but adapted them to the underlying 
+			topology. These include:</font></span></p>
+			<span lang="en-us"><font size="2">- </font></span>
+			<span lang="EN-US"><font size="2">A <b>decentralized component 
+			location and deployment facility</b>.</font></span></p>
+			<p style="text-align: justify"><span lang="EN-US"><font size="2">&nbsp;&nbsp; 
+			- A <b>decentralized lightweight container model </b>which provides 
+			components with the following services:</font></span></p>
+			<blockquote>
+				
+				        <font size="2">&nbsp;
+					· Component life cycle service<br>
+					&nbsp;
+					· Component persistence<br>
+					&nbsp;
+					· Adaptive component activation </font>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: justify; text-autospace: none">
+			&nbsp;</p>
+      
+      
+        <h3>
+          <font size="2">&nbsp;<a name="Architecture">Architecture</a></font></h3>&nbsp;</p>
+		<img border="0" src="images/p2pcm_arch.jpg" width="956" height="543"></p>
+		<blockquote>
+			<span lang="EN-US"><font size="2">The container is responsible for 
+			managing components life cycle, and notifying them about life cycle 
+			events such as activation, passivation, or transaction progress. Any 
+			component provides event interfaces that the container automatically 
+			invokes when particular events occur. Moreover, it provides 
+			components uniform access to services such as persistence, security, 
+			transactions, and many others. In traditional client-server based 
+			component models, the container itself is usually based on a web 
+			application server, database server, operating system, etc. These 
+			kinds of containers are rather monolithic and consume large amounts 
+			of resources thus requiring powerful machines to run on. This 
+			philosophy remains in stark contrast with that of P2P, where 
+			machines are usually treated as equals, and applications run on them 
+			must adapt for each nodes own capacity and limitations. For our component model we have 
+			taken into account these considerations, and opted for designing a
+			<b>decentralized lightweight container model</b>. In our case, all 
+			of the nodes that belong to the network are containers, and as such, 
+			they can house many components. The idea is that any component can 
+			be run in any node (except for any restriction), because each node 
+			runs a lightweight container.</font></span></p>
+			<font size="2">Our containers are fault resilient and autonomous: components are 
+			replicated all along the network. If a container fails, surely other 
+			containers housing those components will exist in the network.</font></span></font></p></p>
+			<p style="text-align: justify">
+			&nbsp;</p>
+		</blockquote>
+		<h3><span style="background-repeat: repeat"><font size="2">
+		<a name="Downloads">Downloads</a></font></span></h3>
+		<table cellSpacing="0" cellPadding="8" width="100%" border="0" id="table1">
+			<tr vAlign="top">
+				<td rowSpan="2">
+				<div id="bodycol0">
+					<div class="app">
+						<div class="h3">
+							<blockquote>
+								<ul>
+									<li><font size="2"><i>Distribution</i>: 
+									Source and binary code, written and compiled 
+									in Java v1.5.0 RC. <i>License</i>: Dermi is 
+									available under a
+									<a href="http://www.gnu.org/copyleft/lesser.html">
+									LGPL</a>-like license.</font>
+									<p><b><font size="2"><span lang="es"> 
+									January 28</span>, 2005.
+									<span lang="es">Release 1</span>.0.</font> 
+									</b> 
+									<ul>
+										<li><font size="2"><u><span lang="es">
+										Release Notes</span></u>: Initial 
+										version.</font> </li>
+										<li><font size="2"><b><u>Download</u></b>:
+										<a href="p2pcm_1_0.zip">p2pcm_1_0.zip</a> [source + binaries 
+										]</font> </li>
+									</ul>
+									</li>
+								</ul>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<h3><span style="background-repeat: repeat"><font size="2">
+		<a name="Authors">Authors</a></font></span></h3>
+		<blockquote>
+			<p><font size="2"><b><a href="http://www.etse.urv.es/~cpairot">Carles Pairot Gavaldà</a></b>, PhD student in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact
+			<a href="mailto:carles.pairot@urv.net">&lt;carles.pairot@urv.net</a>&gt;</font></p>			
+			</font></p>
+			<p><font size="2"><b><a href="http://www.etse.urv.es/~rmondejar">Ruben Mondejar Andreu</a></b>, PhD student in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact
+			<a href="mailto:ruben.monedjar@urv.net">&lt;ruben.mondejar@urv.net</a>&gt;</font></p>	
+			<p><font size="2"><b><a href="http://www.etse.urv.es/~pgarcia">Pedro 
+			García López</a></b>, full-time professor in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact
+			<a href="mailto:pedro.garcia@urv.net">&lt;pedro.garcia@urv.net</a>&gt;
+			<p><font face="Times New Roman"> &nbsp;</font></p>
+			
+		</blockquote>
+		<h3><font size="2"><a name="Publications_">Publications</a></font></h3>
+		<P align=justify><B><FONT face=Verdana size=2>2005</FONT></B></P>
+              <UL>
+                <LI>
+                <P align=justify><font face="Verdana" size="2">Carles Pairot, Pedro García, 
+				Rubén Mondéjar, and Antonio F. Gómez Skarmeta. <b>Building Wide-Area 
+				Collaborative Applications on top of Structured Peer-to-Peer 
+				Overlays</b>. Accepted for publication on Proceedings of 14th 
+				IEEE International Workshops on Enabling Technologies: 
+				Infrastructures for Collaborative Enterprises (WETICE-2005). 
+				Linkoping, Sweden, June 2005.</font> </P></LI>
+				<LI>
+                <P align=justify><font face="Verdana" size="2">Carles 
+                Pairot, Pedro García, Rubén Mondéjar, and Antonio F. Gómez 
+                Skarmeta. <b>p2pCM: A Structured Peer-to-Peer Grid Component 
+                Model</b>. Accepted for publication on Proceedings of the 5th 
+                International Conference on Computational Science. 2nd 
+                International Workshop on Active and Programmable Grid 
+                Architectures and Components. Atlanta, USA, May 2005.</font></P></LI>
+	       </UL>
+		<blockquote>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+		</blockquote>
+		<p></br></p>
+		</p>
+    </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </table>
+        <div id="footer">
+          <table border="0" style="width:100%" cellpadding="4" cellspacing="0">
+            <tr>
+              <td>
+          <table border="0" style="width:100%" cellpadding="4" cellspacing="0" id="table2">
+            <tr>
+              <td width="2">
+<!-- Begin Nedstat Basic code -->
+<!-- Title: Ruben Mondejar -->
+<!-- URL: http://ants.etse.urv.es/planet/rmondejar -->
+<script language="JavaScript" type="text/javascript" src="http://m1.nedstatbasic.net/basic.js">
+</script>
+<script language="JavaScript" type="text/javascript" >
+<!--
+  nedstatbasic("ADC4eQENaA9rF7eynRHVOqj/qDcA", 0);
+// -->
+</script>
+<noscript>
+<a target="_blank" href="http://www.nedstatbasic.net/stats?ADC4eQENaA9rF7eynRHVOqj/qDcA"><img
+src="http://m1.nedstatbasic.net/n?id=ADC4eQENaA9rF7eynRHVOqj/qDcA"
+border="0" width="18" height="18"
+alt="Nedstat Basic - Web site estadísticas gratuito
+El contador para sitios web particulares"></a><br>
+<a target="_blank" href="http://www.nedstatbasic.net/">Contador gratuito</a>
+</noscript>
+<!-- End Nedstat Basic code --></td>
+              <td>
+<font size="2">© 2005-2006 Rubén Mondéjar
+<a href="mailto:ruben.mondejar@urv.net">&lt;ruben.mondejar@urv.net</a>&gt;</font></td>
+            </tr>
+          </table>
+        		</td>
+            </tr>
+          </table>
+        </div>
+      </body>
+    
+<!-- Mirrored from planet.urv.es/p2pcm/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:01:26 GMT -->
+</html>

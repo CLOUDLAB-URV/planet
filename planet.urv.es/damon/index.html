@@ -1,0 +1,373 @@
+﻿<html>
+<!-- Mirrored from planet.urv.es/damon/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:01:26 GMT -->
+<head><meta charset="utf-8"/><title>Damon : a Distributed AOP Middleware on top of a p2p Overlay Network</title>
+<style type="text/css">
+
+          @import url("style/tigris.css");
+
+          @import url("style/maven.css");
+
+
+
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:11.35pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Times;
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="en-gb" http-equiv="Content-Language"/>
+</head>
+<body class="composite">
+<div id="banner">
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+<tbody><tr>
+<td style="text-align: center; vertical-align: middle;" width="217">
+<img border="0" height="163" src="images/logodamon.jpg" width="163"/></td>
+<td style="text-align: center; vertical-align: middle;">
+<p style="text-align: center;"><span style="text-decoration: none;"><a href="index-2.html">
+<font size="5"></font></a></span>
+<font size="5">     
+
+                  </font>
+<font size="5">
+<a href="http://damon.sourceforge.net/">Damon : a <b>D</b>istributed <b>A</b>OP <b>M</b>iddleware on top of 
+					a p2p <b>O</b>verlay <b>N</b>etwork</a></font></p></td>
+<td width="200">
+<div align="right" id="login">
+<p align="center">
+<a href="http://www.p2pgrid.info/">
+<img border="0" height="129" src="http://www.p2pgrid.info/w/images/b/b2/P2pgrid9_big.png" width="273"/></a></p></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="breadcrumbs">
+<table border="0" cellpadding="4" cellspacing="0" width="98%">
+<tbody><tr>
+<td width="286"><font size="2">Last Updated: 30 May 2010</font></td>
+<td>
+<div align="right">
+<font size="2"><a href="http://www.p2pgrid.info/">
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/><a href="http://www.p2pgrid.info/">P2PGRID 
+		Project Page</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/><a href="http://ast-deim.urv.cat/wiki/Ast">
+		AST
+		Research Group</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/>
+<a href="http://sourceforge.net/projects/damon/">Damon Sourceforge 
+		Project</a>
+<img alt="" class="handle" height="7" src="images/none.png" width="7"/>
+<a href="http://ast-deim.urv.cat/easypastry">EasyPastry</a> 
+
+		</a></font>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table border="0" cellpadding="8" cellspacing="0" width="94%">
+<tbody><tr valign="top">
+<td id="leftcol" width="126">
+<div id="navcolumn">
+<div>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<strong><font size="2">Damon</font></strong></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<a href="http://sourceforge.net/project/showfiles.php?group_id=232067">
+<font size="2"><img alt="" class="handle" src="images/none.png"/>Downloads</font></a><font size="2"><br/></font>
+<a href="#Publications_"><img alt="" class="handle" src="images/none.png"/>Publications</a><font size="2"><br/> </font>
+<a href="#Related_Work"><font size="2"><img alt="" class="handle" src="images/none.png"/>Related Projects </font></a>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<a href="#Authors"><img alt="" class="handle" src="images/none.png"/>Authors</a></p> <p style="margin-top: 0pt; margin-bottom: 0pt;">
+<strong><font size="2">Documentation</font></strong></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<a href="api/index.html"><font color="#808080"><img alt="" class="handle" src="images/none.png"/></font>Javadoc 
+		API</a><br/>
+<a href="docs.html"><font color="#808080"><img alt="" class="handle" src="images/none.png"/></font>Installation 
+		guide</a><br/>
+<a href="docs.html#devel"><font color="#808080"><img alt="" class="handle" src="images/none.png"/></font>Developer's 
+		guide</a></p>
+</div>
+<div>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align:center"><font size="2"><br/>
+<a href="http://sourceforge.net/projects/damon/">
+<img align="left" border="0" height="56" src="images/sf_logo.png" width="151"/></a></font></p></div>
+</div>
+</td>
+<td rowspan="2">
+<div id="bodycol">
+<div class="app">
+<div class="h3">
+<h3>
+<font size="2"><a name="Description">Description</a></font></h3>
+<p style="text-align: justify"><span lang="EN-GB"><font size="2">
+			Damon (<u>D</u>istributed <u>A</u>OP <u>M</u>iddleware on top of a p2p <u>O</u>verlay <u>N</u>etwork) 
+			is a fully distributed AOP middleware built on top of a 
+			structured peer-to-peer and dynamic AOP substrates. Its main aim is to provide the 
+			necessary abstractions and services to develop <u>distributed aspects 
+			in large-scale scenarios</u>.</font></span></p>
+<p style="text-align: center">
+<img border="0" height="290" src="images/architecture.png" width="538"/></p>
+<p style="text-align: center">
+		 </p>
+<p style="text-align: justify"><u><b><font size="3">Scalable Deployment 
+		Platform</font></b></u></p>
+<ul>
+<li>
+<p style="text-align: justify"><font size="2">A <b>decentralized aspect 
+		container</b>: that provides the necessary infrastructure to launch and 
+		weave aspects in a decentralized and distributed way.</font><font size="2">
+</font></p>
+<ul>
+<li>
+<p style="text-align: justify"><span lang="EN-GB">
+<font size="2">Location and Discovery Services: supported by a 
+				p2p 
+				locator model.</font></span></p></li>
+<li>
+<p style="text-align: justify"><span lang="EN-GB">
+<font size="2">Aspect Life Cycle: formed manly by the deployment, activation 
+				and availability phase</font></span></p></li>
+</ul>
+</li>
+<li>
+<p style="text-align: justify"><span lang="EN-GB"><font size="2">Underlying<b> 
+			p2p functionalities</b>: necessary 
+		abstraction layer for network and instrumentation services.</font></span></p>
+<ul>
+<li>
+<p style="text-align: justify"><font size="2"><b>Routing </b>and<b> 
+				Messaging</b></font><span lang="EN-GB"><font size="2"> : enables 
+				efficient routing mechanisms for remote services and creates a communication bus among the active 
+				distributed aspects.</font></span><font size="2"><ul>
+<li>
+<p style="text-align: justify"><b>p2p Abstractions </b>are a 
+				mapping from a set of large-scale communication services, like 
+				one-to-one and one-to-many, into our distributed model. Current 
+				abstractions are "direct", "hopped", "any", "many", and "multi" 
+				ones.</p></li>
+</ul></font></p></li>
+</ul>
+<ul>
+<li>
+<p style="text-align: justify"><span lang="EN-GB">
+<font size="2"><b>Persistence</b> : allows distributed aspects to store and retrieve 
+				information from/to the network.</font></span></p></li>
+<li>
+<p style="text-align: justify"><span lang="EN-GB">
+<font size="2"><b>Reflective</b> : that benefits from the instrumentation layer 
+				of the host and the network data.</font></span></p></li>
+</ul>
+</li>
+<li>
+<p style="text-align: justify"><font size="2">p2p Overlay Layer : 
+			provided by <b><a href="http://ast-deim.urv.cat/easypastry">
+			EasyPastry</a></b> project.</font></p></li>
+</ul>
+<p style="text-align: justify"> </p>
+<p style="text-align: justify"><u><b><font size="3">Distributed Composition Model</font></b></u></p>
+<ul>
+<li>
+<p style="text-align: justify"><font size="2"><b>Source Hooks</b> 
+				provide abstract connection between local interception and remote 
+				services. </font></p></li>
+<li>
+<p style="text-align: justify"><font size="2"><b>Remote 
+				Connections</b> 
+				provide remote pointcuts and advices, and remote methods and 
+				invocations mechanisms. </font>
+</p></li>
+</ul>
+<ul>
+<li>
+<p style="text-align: justify"><font size="2"><b>Distributed Meta-Aspect 
+			</b>: which allows transparent composition of the aspect remoting 
+		service of other distributed aspects.</font></p>
+<ul>
+<li>
+<p style="text-align: justify"><font size="2"><b>Remote 
+				Meta-Pointcut</b> 
+				is a new mechanism that performs the remote interception by 
+				specifying a remote service. Moreover, this 
+				interception can occur in different moments of the remote 
+				service execution : "Before", "Around", and "After"</font></p></li>
+<li>
+<p style="text-align: justify"><font size="2"><b>Remote 
+				Meta-Advice</b>  another new mechanism that performs remote 
+				invocation of remote services transparently.</font></p></li>
+</ul>
+<p style="text-align: justify"> </p></li>
+</ul>
+<p style="text-align: center">
+<img border="0" height="205" src="images/logodamon.png" width="289"/></p>
+<p style="text-align: center">
+		 </p>
+<font size="2">
+<font size="2"> </font><h3><font size="2"><font size="2"><a name="Publications_">
+		Publications</a></font></font></h3>
+<p align="justify"><b><font face="Verdana" size="2">
+		2010</font></b></p>
+<blockquote>
+<p align="justify"><font size="2">Rubén Mondéjar.
+						<b><font color="#4F82CB"><a href="http://www.tesisenxarxa.net/TDX-0909110-132701"> 
+                        Distributed AOP Middleware for Large-Scale Scenarios</a></font></b>. 
+						<i>PhD Thesis Dissertation</i>. Tarragona, 29 April 2010. ISBN 978-84-693-5426-1</font></p>
+<p align="justify"><font size="2">Gérald Oster, Rubén Mondéjar, Pascal Molli, and Sergiu Dumitriu.
+						<b><font color="#4F82CB"><a href="http://dx.doi.org/10.1016/j.comnet.2010.03.019"> 
+                        Building
+a Collaborative Peer-to-Peer Wiki System on a Structured Overlay</a></font></b>. 
+						<i><i>Elsevier Computer Networks. </i></i></font>
+<font face="Verdana" style="font-size: 9pt">Vol. 
+						54, No. 12, June 2010, pp. 1939 - 1952.</font><font face="Verdana" style="font-size: 9pt;"> 
+						ISSN: 1389-1286.</font> </p>
+</blockquote>
+<p align="justify"><b><font face="Verdana" size="2">
+		2009</font></b></p>
+<blockquote>
+<p align="justify">
+			Gérald Oster, Pascal Molli, Sergiu Dumitriu, and Ruben Mondejar. <b>UniWiki: A Collaborative P2P System for Distributed Wiki Applications.</b>
+<i>Accepted on the 19th IEEE International Workshops on Enabling Technologies: Infrastructures for Collaborative Enterprises (WETICE-2009)</i>. Groningen, Netherlands, June-July 2009.</p>
+<p align="justify">
+			Rubén Mondéjar, Pedro García, Carles Pairot, Pascal Urso, and Pascal Molli. 
+			<b>
+<a href="http://portal.acm.org/citation.cfm?doid=1529282.1529395">Designing a Distributed AOP Runtime Composition Model.</a></b>
+<i>Accepted for publication on to the 24th Annual ACM Symposium on Applied Computing (SAC 2009)</i>, Honolulu, Hawaii (USA). March 2009.
+
+</p>
+<p align="justify">
+			Gérald Oster, Pascal Molli, Sergiu Dumitriu, and Ruben Mondejar. <b>
+<a href="http://www.loria.fr/~molli/pmwiki/uploads/MainOsterRR09a.pdf">UniWiki: A Reliable and Scalable Peer-to-Peer System for Distributing Wiki Applications</a></b>. 
+			<i>Research Report RR-6848, LORIA -- INRIA Nancy Grand Est (France)</i>, February 2009.</p>
+</blockquote>
+<p align="justify"><b><font face="Verdana" size="2">
+		2008</font></b></p>
+<blockquote>
+<p align="justify">
+			Rubén Mondéjar, Pedro García, Carles Pairot and Antonio F. Gómez 
+			Skarmeta.
+						<b>
+<a href="http://portal.acm.org/citation.cfm?doid=1408620.1408624">Building a Distributed AOP Middleware for Large Scale Systems</a></b>. 
+			<i>Accepted for publication on 7th International Conference on 
+			Aspect-Oriented Software Development (AOSD 2008), Next Generation 
+			Aspect Oriented Middleware Workshop (NAOMI 2008)</i>. Brussels, Belgium, 
+			March - April 2008. ACM ISBN: 978-1-60558-148-4/08/04.</p>
+</blockquote>
+<p align="justify"><b><font face="Verdana" size="2">
+		2007</font></b></p>
+<blockquote>
+<p align="justify">
+			Rubén Mondéjar, Pedro 
+						García, Carles Pairot and Antonio F. Gómez Skarmeta.
+			<font color="#4F82CB"><b>
+<a href="http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-267/paper6.pdf">Adaptive Peer-to-Peer Web 
+						Clustering using Distributed Aspect Middleware (Damon)</a></b></font>.
+						<i>Accepted for publication on the 7th International 
+						Conference on Web Engineering (ICWE’07). Workshop on on 
+						Adaptation and Evolution in Web Systems Engineering 
+						(AEWSE'07)</i>. Como, Italy, July 2007.
+			CEUR Workshop Proceedings, ISSN 1613-0073.</p>
+</blockquote>
+<p align="justify"><b><font face="Verdana" size="2">
+		2006</font></b></p>
+<blockquote>
+<p align="justify"><span style="font-family: Verdana;">Rubén 
+			Mondéjar, Pedro García, Carles Pairot and Antonio F. Gómez Skarmeta.</span><font face="Verdana" size="2">
+<b><a href="http://doi.acm.org/10.1145/1210525.1210533">Damon: a 
+			Decentralized Aspect Middleware Built on top of a Peer-to-Peer 
+			Overlay Network</a></b>. <i>Accepted for publication on Proceedings 
+			of the 14th ACM SIGSOFT Symposium on Foundations of Software 
+			Engineering (FSE 2006). Workshop on Software Engineering and 
+			Middleware (SEM 2006)</i>. Portland (Oregon), USA, November 2006. 
+			ISBN 1-59593-585-1</font></p>
+<p align="justify">
+			 </p>
+</blockquote><h3><span style="background-repeat: repeat;">
+<font size="2"> <font size="2"><a name="Related_Work">Related Projects </a></font></font></span></h3>
+<p> <p> <table border="1" bordercolorlight="#000000" id="table3" width="97%">
+<tr>
+<td style="text-align: center; vertical-align: middle"><b><font size="3">UniWiki</font></b></td>
+<td style="text-align: center; vertical-align: middle">
+<font size="3">
+<b>CloudSNAP</b></font></td>
+<td style="text-align: center; vertical-align: middle" width="314">
+<font size="3">
+<b>EasyPastry</b></font></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle">
+<font size="2">
+<a href="http://uniwiki.sourceforge.net/">
+<img border="0" height="155" src="images/uniwiki.png" width="155"/></a></font></td>
+<td style="text-align: center; vertical-align: middle">
+<a href="http://snap.ow2.org/">
+<img border="0" height="167" src="images/snap.jpg" width="151"/></a></td>
+<td style="text-align: center; vertical-align: middle" width="314">
+<a href="http://ast-deim.urv.cat/easypastry/">
+<img border="0" height="110" src="images/easypastry.png" width="221"/></a></td>
+</tr>
+</table>
+<p align="left"> <p align="left"></p></p></p></p></font><font size="2">
+<h3><span style="background-repeat: repeat;"><a name="Authors">Authors</a></span></h3>
+<blockquote>
+<p><b><a href="http://deim.urv.cat/~ruben.mondejar">Rubén Mondéjar Andreu</a></b>, 
+			PhD research collaborator and part-time instructor in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:ruben.mondejar@urv.cat">ruben.mondejar@urv.cat</a>&gt;</p>
+<p></p>
+<p><b><a href="http://deim.urv.cat/~pgarcia">Pedro García López</a></b>, full-time professor in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:pedro.garcia@urv.cat">pedro.garcia@urv.cat</a>&gt;
+
+			</p>
+<p><b><a href="http://deim.urv.cat/~cpairot">Carles Pairot Gavaldà</a></b>, PhD 
+			research collaborator in the Department of 
+			Computer Science and Mathematics at Universitat Rovira i Virgili in 
+			Tarragona, Catalonia, Spain. Contact &lt;<a href="mailto:carles.pairot@urv.cat">carles.pairot@urv.cat</a>&gt;</p>
+</blockquote></font>
+<blockquote>
+<font size="3">
+<p align="left"> </p></font></blockquote>
+<font size="2">
+<font size="2"> </font><p></p>
+<font size="2"> </font></font></div>
+<font size="2"> </font></div>
+<font size="2"> </font></div>
+<font size="2"> </font></td>
+</tr>
+</tbody></table>
+<div id="footer">
+<table border="0" cellpadding="4" cellspacing="0" style="width: 100%;">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="4" cellspacing="0" id="table2" style="width: 100%;">
+<tbody><tr>
+<td width="2">
+<!-- Begin Google Analytics code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-822924-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!-- End Google Analytics code --></td>
+<td>
+<font size="2">© 2006-2010 Rubén Mondéjar &lt;<a href="mailto:ruben.mondejar@urv.cat">ruben.mondejar@urv.cat</a>&gt;</font></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+</body>
+<!-- Mirrored from planet.urv.es/damon/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Nov 2026 09:01:39 GMT -->
+</html>
