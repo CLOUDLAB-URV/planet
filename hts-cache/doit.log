@@ -1,8 +1,0 @@
-https://planet.urv.es/ -O ./planet_backup +*.planet.urv.es/* +*.projects-deim.urv.cat/* -%v
-File generated automatically on Mon, 02 Nov 2026 09:59:19, do NOT edit
-
-To update a mirror, just launch httrack without any parameters
-The existing cache will be used (and modified)
-To have other options, retype all parameters and launch HTTrack
-To continue an interrupted mirror, just launch httrack without any parameters
-
